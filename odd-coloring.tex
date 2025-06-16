@@ -121,28 +121,35 @@ Seja $G$ um grafo. Se existe uma $k$-partição $V_1, V_2, \ldots ,V_k$ dos vér
  
  \begin{defi}
  	\label{defi1}
- 	Seja $P = \{C_1, C_2, \ldots C_k \}$ uma k-partição de $n$ termos. Dizemos que $P$ é uma k-partição par se, para todo $1 \leq i \leq k$, $|C_i|$ é par. Do contrário, dizemos que $P$ é uma k-partição ímpar, \ie, $P$ é uma k-partição ímpar se alguma parte $C_i$ tem tamanho ímpar. 
+ 	Seja $\mathcal{P} = \{P_1, P_2, \ldots P_k \}$ uma $k-$partição de $d$ elementos distintos. Dizemos que $\mathcal{P}$ é uma $k-$partição par se $|P_i|$ é par, para todo $P_i \in \mathcal{P}$.
  \end{defi} \newbegin
+  
  
  \begin{defi}
  	\label{defi2}
- 	Seja $P = \{C_1, C_2, \ldots C_k \}$ uma k-partição ímpar de $n$ termos. Dizemos que $P$ é uma k-partição $\ell$-ímpar se há exatamente $\ell$ partes distintas em $P$ de tamanho ímpar, para $\ell \geq 1$.
- \end{defi} \newbegin
- 
- \begin{defi}
- 	\label{defi3}
- 	Denotamos por $\mu(n, k)$ a quantidade de k-partições pares distintas de $n$ termos.
+ 	Denotamos por $\mu(d, k)$ a quantidade de $k-$partições pares distintas de $d$ elementos distintos.
  \end{defi} \newbegin
  
   \begin{defi}
- 	\label{defi4}
- 	Denotamos por $\Phi(n, k)$ a quantidade de k-partições ímpares distintas de $n$ termos. Denotamos por $\Phi_\ell(n, k)$ a quantidade de k-partições $\ell$-ímpares distintas de $n$ termos, para $\ell \geq 1$. Também denotamos por $\Phi_{\geq \ell}(n, k)$ a quantidade de k-partições $t$-ímpares distintas $n$ termos, para todo $ \ell \leq t \leq k$, \ie, $\Phi_{\geq \ell}(n, k) = \sum\limits_{i = \ell}^{k} \Phi_{i}(n, k)$. 
+ 	\label{defi3}
+ 	Denotamos por $\Phi(d, k)$ a quantidade de $k-$partições não pares distintas de $d$ elementos distintos. Denotamos por $\Phi_\ell(d, k)$ a quantidade de $k-$partições não pares de $d$ elementos, com exatamente $\ell$
+ 	partes de cardinalidade ímpar. Também denotamos por $\Phi_{\geq \ell}(d, k)$ a quantidade de $k-$partições não pares de $d$ elementos com pelo menos $\ell$ partes de cardinalidade ímpar, \ie, $\Phi_{\geq \ell}(d, k) = \sum\limits_{i = \ell}^{k} \Phi_{i}(d, k)$. 
+ \end{defi} \newbegin
+  
+   \begin{defi}
+ 	\label{def4}
+   Denotamos por $\varphi_\ell(d, k)$ a quantidade de $k-$partições não pares de $d$ elementos onde somente as primeiras $\ell$ partes tenham cardinalidade ímpar. Claramente temos que $\varphi_\ell(d, k) \leq \Phi_\ell(d, k)$, pois $\varphi_\ell(d, k)$ conta apenas as $k-$partições com as primeiras $\ell$ partes de cardinalidade ímpar, já $\Phi_\ell(d, k)$ conta qualquer subconjunto pertencente a $\escolhe{[k]}{\ell}$ com cardinalidade ímpar.
  \end{defi} \newbegin
  
-   \begin{defi}
- 	\label{defi5}
-   Denotamos por $\varphi_\ell(n, k)$ a quantidade de k-partições $\ell$-ímpares, com a restrição de que somente as primeiras $\ell$ partes tenham cardinalidade ímpar. Claramente temos que $\varphi_\ell(n, k) \leq \Phi_\ell(n, k)$, pois $\varphi_\ell(n, k)$ conta apenas as k-partições com as primeiras $\ell$ partes de cardinalidade ímpar, já $\Phi_\ell(n, k)$ conta qualquer subconjunto pertencente a $\escolhe{[k]}{\ell}$ com cardinalidade ímpar.
+  \begin{defi}
+ 	\label{def5}
+ 	Denotamos por $\chi_{io}(G)$ o menor inteiro $k$ tal que  $G$ possui uma $k-$coloração ímpar não própria. 
  \end{defi} \newbegin
+ 
+ \begin{prop}
+ 	\label{prop3}
+ 	Seja $2n!!$ o fatorial dos ímpares. Temos que $2n!! \leq n^n$.
+ \end{prop} \newbegin
  
  
  \begin{lema}  
@@ -150,35 +157,35 @@ Seja $G$ um grafo. Se existe uma $k$-partição $V_1, V_2, \ldots ,V_k$ dos vér
  	Seja a recorrência a seguir: \\
  	
  		\begin{equation}
- 		T(2n, k) =
+ 		T(2d, k) =
  		\begin{cases}
- 			1 & \text{se $n = 0$ ou $k = 1$} \\
- 			\sum\limits_{i = 0}^{n} \escolhe{2n}{2i} \cdot T(2i, k-1) & \text{c.c.} \\ 
+ 			1 & \text{$k = 1$} \\
+ 			\sum\limits_{i = 0}^{dn} \escolhe{2d}{2i} \cdot T(2i, k-1) & \text{c.c.} \\ 
  		\end{cases}
  	\end{equation}
  	
- 	Temos que $T(2n, k) = \mu(2n, k)$.
+ 	Temos que $T(2d, k) = \mu(2d, k)$, para $k \geq 1$.
  \end{lema}
  
  \begin{proof}
  	A demonstração segue por indução em $k$. \newl
  	
- 	Base ($k = 1$): Para $k = 1$, temos que $T(2n, k) = \mu(2n, 1) = 1$, pois há uma única partição $P=\{C_1\}$ de $2n$, de modo que $|C_1|$ seja par. Sendo assim, o resultado segue. \newl
+ 	Base ($k = 1$): Para $k = 1$, temos que $T(2d, k) = \mu(2d, 1) = 1$, pois há uma única partição $\mathcal{P}=\{P_1\}$ de $2d$ elementos, de modo que $|P_1|$ seja par. Sendo assim, o resultado segue. \newl
  	
- 	Passo ($k > 1$): Suponha que $T(2n, \ell) = \mu(2n, \ell)$, para todo $1 \leq \ell < k$. Seja $a_{2i}$ a quantidade de maneiras de escolher $2i$ termos de $2_n$ termos para a parte $C_k$. Como $C_k$ tem tamanho par, temos que $|C_k| = 2i$, para $0 \leq i \leq n$. Note que ao escolher $2i$ termos para a parte $C_k$ temos que escolher uma (k-1)-partição par $P'$ para os $2n - 2i$. Por definição, a quantidade de (k-1)-partições pares distintas de $2n - 2i$ termos é igual a $\mu(2n - 2i, k-1)$. Sendo assim: 
+ 	Passo ($k > 1$): Suponha que $T(2d, \ell) = \mu(2d, \ell)$, para todo $1 \leq \ell < k$. Como $P_k$ tem tamanho par, temos que existe um $i$ tal que $|P_k| = 2i$, onde $0 \leq i \leq d$. Sabemos que há $\escolhe{2d}{2i}$ maneiras de escolher $2i$ elementos de $2d$ elementos para a parte $P_k$. Note que ao escolher $2i$ elementos para a parte $P_k$ temos que particionar os $2d - 2i$ elementos restantes em $(k-1)$ partes, de modo que cada parte tenha tamanho par. Sendo assim, temos que escolher uma $(k-1)-$partição par $\mathcal{P'}$ de $2d - 2i$ elementos. Note que há $\mu(2d - 2i, k-1)$ maneiras de escolher $\mathcal{P'}$. Sendo assim: 
  	
  	\begin{align}
  		\begin{split}
- 			\mu(2n, k) = \sum\limits_{i = 0}^{n}a_{2i} \cdot \mu(2n - 2i, k-1)
+ 			\mu(2n, k) = \sum\limits_{i = 0}^{d}\escolhe{2d}{2i} \cdot \mu(2d - 2i, k-1)
  		\end{split} 
  	\end{align} 
  	
- 	Por $HI$, $T(2n - 2i, k-1) = \mu(2n - 2i, k-1)$. Note que $a_{2i} = \escolhe{2n}{2i} = \escolhe{2n}{2n - 2i} $. Logo:
+ 	Por $HI$, $T(2d - 2i, k-1) = \mu(2d - 2i, k-1)$. Note que $\escolhe{2d}{2i} = \escolhe{2d}{2d - 2i} $. Logo:
  	
  	\begin{align}
  		\begin{split}
- 			\mu(2n, k) &= \sum\limits_{i = 0}^{n}\escolhe{2n}{2n - 2i} \cdot T(2n - 2i, k-1)\\
- 			&= \sum\limits_{i = 0}^{n}\escolhe{2n}{2i} \cdot T(2i, k-1) = T(2n, k)
+ 			\mu(2d, k) &= \sum\limits_{i = 0}^{n}\escolhe{2d}{2d - 2i} \cdot T(2d - 2i, k-1)\\
+ 			&= \sum\limits_{i = 0}^{d}\escolhe{2d}{2i} \cdot T(2i, k-1) = T(2d, k)
  		\end{split} 
  	\end{align}
  	
@@ -190,45 +197,49 @@ Seja $G$ um grafo. Se existe uma $k$-partição $V_1, V_2, \ldots ,V_k$ dos vér
  	Seja a recorrência a seguir: \\
  	
  	\begin{equation}
- 		R(2n, k) =
+ 		R(2d, k) =
  		\begin{cases}
  			0 & \text{se $k \leq 1$}\\
- 			2^{2n - 1} & \text{se $k = 2$} \\
- 			\sum\limits_{i = 1}^{n} \escolhe{2n}{2i} \cdot R(2i, k-1) & \text{se $k > 2$} \\ 
+ 			2^{2d - 1} & \text{se $k = 2$} \\
+ 			\sum\limits_{i = 1}^{d} \escolhe{2d}{2i} \cdot R(2i, k-1) & \text{se $k > 2$} \\ 
  		\end{cases}
  	\end{equation}
  	
- 	Temos que $R(2n, k) = \varphi_2(2n, k)$.
+ 	Temos que $R(2d, k) = \varphi_2(2d, k)$.
  \end{lema}
   
   \begin{proof}
   	A demonstração segue por indução em $k$.
   	
-  	Base ($k = 2$): Note que $\varphi_2(2n, 2) = \Phi(2n, 2)$, pois, seja uma k-partição ímpar $P=(C_1, C_2)$, como $2n$ é par, temos que $|C_1| \text{ e } |C_2|$ são pares ou $|C_1| \text{ e } |C_2|$ são ímpares. Note que $\Phi(2n, 2) = 2^{2n} - \mu(2n, 2)$, pois há exatamente $2^{2n}$ formas de particionar $2n$ termos em duas partes $C_1$ e $C_2$ e dessas $2^{2n}$ maneiras há $\mu(2n, 2)$ maneiras de particionar $2n$ termos tal que $|C_1|$ e $|C_2|$ sejam pares. Note que:  
+  	Base ($k = 2$): Note que $\varphi_2(2d, 2) = \Phi(2d, 2)$, pois, seja uma $k-$partição não par $\mathcal{P}=(P_1, P_2)$, como $2d$ é par, temos que $|P_1| \text{ e } |P_2|$ são pares ou $|P_1| \text{ e } |P_2|$ são ímpares. Note que $\Phi(2d, 2) = 2^{2d} - \mu(2d, 2)$, pois há exatamente $2^{2d}$ formas de particionar $2d$ elementos em duas partes $P_1$ e $P_2$ e dessas $2^{2d}$ maneiras há $\mu(2d, 2)$ maneiras de particionar $2d$ termos tal que $|P_1|$ e $|P_2|$ sejam pares. Note que:  
   	
   	\begin{align}
   		\begin{split}
-  			\mu(2n, 2) &= \sum\limits_{i = 0}^{n}\escolhe{2n}{2i} \cdot T(2i, 1) = \sum\limits_{i = 0}^{n}\escolhe{2n}{2i} = 2^{2n-1}
+  			\mu(2d, 2) &= \sum\limits_{i = 0}^{d}\escolhe{2d}{2i} \cdot T(2i, 1) = \sum\limits_{i = 0}^{d}\escolhe{2d}{2i} = 2^{2d-1}
   		\end{split} 
   	\end{align} 
   	
-  	Logo, temos que $\varphi_2(2n, 2) = \Phi(2n, 2) = 2^{2n} - 2^{2n - 1} = 2^{2n - 1} = R(2n, 2)$ e o resultado segue. \newl
+  	Logo, temos que $\varphi_2(2d, 2) = \Phi(2d, 2) = 2^{2d} - 2^{2d - 1} = 2^{2d - 1} = R(2d, 2)$ e o resultado segue. \newl
   	
   	
-  	Passo ($k > 1$): Suponha que $R(2n, \ell) = \varphi_2(2n, \ell)$, para todo $2 \leq \ell < k$. Seja $a_{2i}$ a quantidade de maneiras de escolher $2i$ termos de $2_n$ termos para a parte $C_k$. Como somente as partes $C_1$ e $C_2$ tem tamanho ímpar, temos que a parte $C_k$ tem tamanho par, pois $k > 2$. Logo $|C_k| = 2i$, para $0 \leq i \leq n - 1$. Note que $|C_k| \leq 2n - 2$, pois como $C_1$ e $C_2$ possuem tamanho ímpar, temos que há ao menos um termo em $C_1$ e $C_2$. Note que ao escolher $2i$ termos para a parte $C_k$ temos que escolher uma (k-1)-partição 2-ímpar $P'$ para os $2n - 2i$. Por definição, a quantidade de (k-1)-partições 2-ímpares distintas de $2n - 2i$ termos é igual a $\varphi_2(2n - 2i, k-1)$. Sendo assim: 
+  	Passo ($k > 1$): Suponha que $R(2d, \ell) = \varphi_2(2d, \ell)$, para todo $2 \leq \ell < k$.
+  	 
+  	
+  	 Como somente as partes $P_1$ e $P_2$ tem tamanho ímpar, temos que a parte $P_k$ tem tamanho par, pois $k > 2$. Sendo assim, existe um $i$ tal que $|P_k| = 2i$, onde $0 \leq i \leq d - 1$. Note que $|P_k| \leq 2d - 2$, pois como $P_1$ e $P_2$ possuem tamanho ímpar, temos que há ao menos um termo em $P_1$ e $P_2$. Sabemos que há $\escolhe{2d}{2i}$ maneiras de escolher $2i$ elementos de $2d$ elementos para a parte $P_k$. Note que ao escolher $2i$ elementos para a parte $P_k$ temos que particionar os $2d - 2i$ elementos restantes em $(k-1)$ partes, de modo que apenas as partes $P_1$ e $P_2$ tenham tamanho par. Sendo assim, temos que escolher uma $(k-1)-$partição não par $\mathcal{P'}$ de $2d - 2i$ elementos, onde apenas $P_1$ e $P_2$ tem cardinalidade ímpar. Note que há $\varphi_2(2d - 2i, k-1)$ maneiras de escolher $\mathcal{P'}$. Sendo assim: 
+  	  
   	
   	\begin{align}
   		\begin{split}
-  			\varphi_2(2n, k) = \sum\limits_{i = 0}^{n - 1}a_{2i} \cdot \varphi_2(2n - 2i, k-1)
+  			\varphi_2(2d, k) = \sum\limits_{i = 0}^{d - 1}\escolhe{2d}{2i} \cdot \varphi_2(2d - 2i, k-1)
   		\end{split} 
   	\end{align} 
   	
-  	Por $HI$, $R(2n - 2i, k-1) = \varphi_2(2n - 2i, k-1)$. Note que $a_{2i} = \escolhe{2n}{2i} = \escolhe{2n}{2n - 2i} $. Logo:
+  	Por $HI$, $R(2d - 2i, k-1) = \varphi_2(2d - 2i, k-1)$. Note que $\escolhe{2d}{2i} = \escolhe{2d}{2d - 2i} $. Logo:
   	
   	\begin{align}
   		\begin{split}
-  			\varphi_2(2n, k) &= \sum\limits_{i = 0}^{n-1}\escolhe{2n}{2n - 2i} \cdot R(2n - 2i, k-1)\\
-  			&= \sum\limits_{i = 1}^{n}\escolhe{2n}{2i} \cdot R(2i, k-1) = R(2n, k)
+  			\varphi_2(2d, k) &= \sum\limits_{i = 0}^{d-1}\escolhe{2d}{2d - 2i} \cdot R(2d - 2i, k-1)\\
+  			&= \sum\limits_{i = 1}^{d}\escolhe{2d}{2i} \cdot R(2i, k-1) = R(2d, k)
   		\end{split} 
   	\end{align}  
   	
@@ -239,174 +250,184 @@ Seja $G$ um grafo. Se existe uma $k$-partição $V_1, V_2, \ldots ,V_k$ dos vér
   	$\varphi_2(2n, k) \leq \mu(2n, k)$.
   \end{lema}
   
-  \begin{proof}
-  	A demonstração segue por indução em $k$.
+  \begin{proof} 
   	
-  	Base ($k = 2$): Pelo Caso Base do Lema $\ref{lema3}$, temos que $\varphi_2(2n, 2) = 2^{2n - 1} = \mu(2n, 2)$ e o resultado segue. \newl
-  	
-  	Passo ($k > 2$): Suponha que $\varphi_2(2n, \ell) \leq \mu(2n, \ell)$, para $2 \leq \ell < k$. Note que: \newl
-  	
-  	\begin{align}
-  		\begin{split}
-  			\mu(2n, k) = \sum\limits_{i = 0}^{n} \escolhe{2n}{2i} \cdot \mu(2i, k-1)  \geq \sum\limits_{i = 1}^{n} \escolhe{2n}{2i} \cdot \mu(2i, k-1)
-  		\end{split} 
-  	\end{align}
-  	
-  	Por $HI$: \newl
-  	
-  	\begin{align}
-  		\begin{split}
-  			 \sum\limits_{i = 1}^{n} \escolhe{2n}{2i} \cdot \varphi_2(2i, k-1) \leq \sum\limits_{i = 1}^{n} \escolhe{2n}{2i} \cdot \mu(2i, k-1)
-  		\end{split} 
-  	\end{align}
-  	
-  	Como $\varphi_2(2n, k) = \sum\limits_{i = 1}^{n} \escolhe{2n}{2i} \cdot \varphi_2(2i, k-1)$, por $(9)$ e $(10)$, temos que $\varphi_2(2n, k) \leq \mu(2n, k)$.
-  
   \end{proof} \newpage
 
   
   \begin{lema}  
   	\label{lema5} 
-  	$\Phi_2(2n, k) = \escolhe{k}{2} \cdot \varphi_2(2n, k)$.
+  	$\Phi_2(2d, k) = \escolhe{k}{2} \cdot \varphi_2(2d, k)$.
   \end{lema}
   
   \begin{proof}
-  	Pela definição, $\varphi_2(2n, k)$ conta a quantidade de k-partições $C_1, C_2 \ldots C_k$ onde apenas $C_1$ e $C_2$ tenham tamanho ímpar. Pela definição, $\Phi_2(2n, k)$ conta a quantidade de k-partições $C_1, C_2 \ldots C_k$ onde exatamente duas partes quaisquer $C_i$ e $C_j$ tem tamanho ímpar, para $1 \leq i, j \leq k$. Note que $\varphi_2(2n, k)$ não conta as k-partições onde $|C_i|$ ou $|C_j|$ são ímpares, para $i, j \geq 3$. Mas, neste caso, podemos considerar $C_i$ e $C_j$ como sendo as partes $C_1$ e $C_2$, de modo que a quantidade de k-partições ímpares distintas onde somente $|C_i|$ e $|C_j|$ são ímpares seja igual a $\varphi_2(2n, k)$. Como há exatamente $\escolhe{k}{2}$ formas de escolher duas partes $C_i$ e $C_j$ entre as $k$ partes, de modo que $|C_i|$ e $|C_j|$ sejam ímpares, temos que $\Phi_2(2n, k) = \escolhe{k}{2} \cdot \varphi_2(2n, k)$.
+  	Pela definição, $\varphi_2(2d, k)$ conta a quantidade de $k-$partições $\mathcal{P} = \{ P_1, P_2, \ldots P_k \}$, onde apenas $P_1$ e $P_2$ tenham tamanho ímpar. Pela definição, $\Phi_2(2d, k)$ conta a quantidade de $k-$partições $\mathcal{P} = \{ P_1, P_2, \ldots P_k \}$ onde exatamente duas partes quaisquer $P_i$ e $P_j$ tem tamanho ímpar, para algum $1 \leq i, j \leq k$. Note que $\varphi_2(2d, k)$ não conta as $k-$partições onde $|P_i|$ ou $|P_j|$ são ímpares, para $i, j \geq 3$. Mas, neste caso, podemos considerar $P_i$ e $P_j$ como sendo as partes $P_1$ e $P_2$, de modo que a quantidade de $k-$partições ímpares distintas onde somente $|P_i|$ e $|P_j|$ são ímpares seja igual a $\varphi_2(2d, k)$. Como há exatamente $\escolhe{k}{2}$ formas de escolher duas partes $P_i$ e $P_j$ entre as $k$ partes, de modo que $|P_i|$ e $|P_j|$ sejam ímpares, temos que $\Phi_2(2d, k) = \escolhe{k}{2} \cdot \varphi_2(2d, k)$.
   	
   \end{proof}\newl
   
     
   \begin{lema}  
-  	\label{lema9} 
+  	\label{lema6} 
   	Seja a recorrência a seguir: \\
   	
   	\begin{equation}
-  		X(2n) =
+  		X(2d) =
   		\begin{cases}
-  			1 & \text{se $n = 0$}\\
-  			(2n - 1) k \cdot X(2n - 2) & \text{c. c.} \\ 
+  			1 & \text{se $d = 0$}\\
+  			(2d - 1) k \cdot X(2d - 2) & \text{c. c.} \\ 
   		\end{cases}
   	\end{equation}
   	
-  	Temos que $\mu(2n, k) \leq X(2n)$.
+  	Temos que $\mu(2d, k) \leq X(2d)$.
   \end{lema}
   
   \begin{proof} 
-  	A demonstração segue por indução em $n$. \newl
+  	A demonstração segue por indução em $d$. \newl
   	
-  	Base $(n = 0)$: Se $n=0$, então $T(0, k) = 1 \leq X(0)$ e o resultado segue. \newl
+  	Base $(d = 0)$: Se $d=0$, então $T(0, k) = 1 \leq X(0)$ e o resultado segue. \newl
   	
-  	Passo $(n > 0)$: Suponha que $\mu(2\ell, k) \leq X(2\ell)$, para todo $0 \leq \ell < n$. Seja $P=(C_1, C_2 \ldots C_k)$ uma k-partição par de $2n$ termos. Considere que o termo $2n \in C_i$, para algum $1 \leq i \leq k$. Como $|C_i|$ é par, temos que existe um termo $y \in C_i$, tal que $y \neq 2n$. Seja $P'$ a k-partição resultante da remoção dos termos $2n$ e $y$ da parte $C_i$ de $P$. Note que $P'$ é uma k-partição par de $2n - 2$ termos. Portanto, $P'$ é contada em $\mu(2n - 2, k)$. Sendo assim, $\mu(2n - 2, k)$ conta as k-partições pares de $2n$ termos onde $y, 2n \in C_i$, para algum $1 \leq i \leq k$. Como há $k$ possibilidades para a parte $C_i$, temos que $k \cdot \mu(2n - 2, k)$ conta as k-partições pares de $2n$ termos onde $y, 2n \in C_j$, para todo $1 \leq j \leq k$. Observe que $y$ pode ser qualquer um dos $2n - 1$ termos restantes. Sendo assim, cada k-partição par $P$ de $2n$ termos é equivalente a alguma combinação de $(2n - 1)k \cdot \mu(2n - 2, k)$. Sendo assim, $\mu(2n, k) \leq (2n - 1)k \cdot \mu(2n - 2, k)$. Por $HI$, $\mu(2n - 2, k) \leq X(2n - 2)$, logo:
+  	Passo $(d > 0)$: Suponha que $\mu(2\ell, k) \leq X(2\ell)$, para todo $0 \leq \ell < d$. Seja $\mathcal{P}=(P_1, P_2 \ldots P_k)$ uma $k-$partição par de $2d$ elementos. Considere que o elemento $2d \in P_1$. Como $|P_1|$ é par, temos que existe um elemento $y \in P_1$, tal que $y \neq 2d$. Seja $\mathcal{P'}$ a $k-$partição resultante da remoção dos elementos $2d$ e $y$ da parte $P_1$ de $\mathcal{P}$. Note que $\mathcal{P'}$ é uma $k-$partição par de $2d - 2$ elementos. Portanto, $\mathcal{P'}$ é contada em $\mu(2d - 2, k)$. Sendo assim, $\mu(2n - 2, k)$ conta as $k-$partições pares de $2d$ elementos onde $y, 2n \in P_1$. Note que $k \cdot \mu(2n - 2, k)$ conta as $k-$partições pares de $2d$ elementos, onde o elemento $y$ e o elemento $2n$ pertencem a mesma parte, pois há $k$ partes em $\mathcal{P}$ e $\mu(2n - 2, k)$ conta as $k-$partições pares de $2d$ elementos onde $y, 2n \in P_1$. Observe que $y$ pode ser qualquer um dos $2n - 1$ elementos restantes. Sendo assim, $(2d - 1)k \cdot \mu(2d - 2, k)$ conta as $k-$partições pares de $2n$ elementos, onde $y, 2n \in P_i$, onde $P_i \in \mathcal{P}$ e $y$ é um elemento distinto de $2n$, portanto, $\mu(2d, k) \leq (2d - 1)k \cdot \mu(2d - 2, k)$. Por $HI$, $\mu(2d - 2, k) \leq X(2d - 2)$, logo:
   	
   	\begin{align}
   		\begin{split}
-  			\mu(2n, k) \leq (2n - 1)k \cdot \mu(2n - 2, k) \leq (2n - 1)k \cdot X(2n - 2) = X(2n)
+  			\mu(2d, k) \leq (2d - 1)k \cdot \mu(2d - 2, k) \leq (2d - 1)k \cdot X(2d - 2) = X(2d)
   		\end{split} 
   	\end{align} 
   	
-  \end{proof}\newl
-  
-   \begin{lema}  
-  	\label{lema6} 
-  	Seja $X_\ell$ o evento de uma k-partição de $\ell$ termos $P$ ser ímpar. Temos que $\mathds{P}[X_{2n+2}] \geq \mathds{P}[X_{2n}] \longleftrightarrow \Phi(2n+2, k) \geq \Phi(2n, k) \cdot k^{2}$.
+  \end{proof} \enlargethispage{-3\baselineskip}
+
+  \begin{lema}  
+  	\label{lema7} 
+  	$ X(2d) \leq (d\cdot k)^d$
   \end{lema}
   
   \begin{proof}
-  	Sejam $\Omega$ e $\Omega'$ os conjuntos de todas k-partições de $2n$ e $2n+2$ termos, respectivamente. Temos que $\mathds{P}[X_{2n}] = \dfrac{\Phi(2n, k)}{|\Omega|}$ e $\mathds{P}[X_{2n+2}] = \dfrac{\Phi(2n+2, k)}{|\Omega'|}$. Note que $|\Omega| = k^{2n}$, pois cada um dos $2n$ termos pode pertencer a qualquer um dos $k$ conjuntos independentemente. Da mesma forma, $|\Omega'| = k^{2n + 2}$. Sendo assim:
+  	
+  \end{proof} \newl
+  
+  \begin{lema} 
+  	\label{lema8} 
+  	$\Phi(2d+2, k) \geq \Phi(2d, k) \cdot k^{2}$
+  \end{lema}
+  
+  \begin{proof}
+  	
+  Para demonstrar este lema, iremos contar as $k-$partições não pares possíveis de $2d+2$ elementos geradas a partir das $k-$partições contadas em $\Phi_2(2d, k) $, $\Phi_{\geq 4}(2d, k)$ e em $\mu(2d, k)$. Note que podemos formar uma $k-$partição $\mathcal{P}'$ de $2d+2$ elementos, a partir de uma $k-$partição $\mathcal{P}$ de $2d$ elementos, combinando os elementos $2n+1$ e $2n+2$ entre as $k$ partes de $\mathcal{P}$. Observe que temos $k^2$ maneiras de combinar os elementos $2n+1$ e $2n+2$ entre as $k$ partes, sendo assim, há $k^2$ partições $\mathcal{P}_1'$ distintas.
+  	
+  Agora, tome uma $k-$partição não par $\mathcal{P}_1$ de $2d$ elementos contada em $\Phi_{\geq 4}(2d, k)$, \ie, $\mathcal{P}_1$ é uma $k-$partição com ao menos $4$ partes de tamanho ímpar. Seja $\mathcal{P}_1'$ uma $k-$partição resultante das $k^2$ combinações dos termos $2d+1$ e $2d+2$ nas $k$ partes de $\mathcal{P}_1$. Como $\mathcal{P}_1$ tem ao menos $4$ partes de tamanho ímpar, temos que $\mathcal{P}_1'$ é uma $k-$partição não par, para qualquer $k-$partição $\mathcal{P}_1'$. Sendo assim, $\Phi(2n+2, k) \geq \Phi_{\geq 4}(2n, k) \cdot k^2$.
+  
+  	Agora, tome uma $k-$partição não par $\mathcal{P}_2$ de $2d$ elementos, com exatamente duas partes de tamanho ímpar. Considere que as partes $P_i$ e $P_j$ tenham tamanho ímpar em $\mathcal{P}_2$. Seja $\mathcal{P}_2'$ uma $k-$partição de $2d+2$ termos resultante das $k^2$ combinações dos termos $2d+1$ e $2n+2$ nas $k$ partes de $P_2$. Observe que $\mathcal{P}_2'$ é uma $k-$partição par se e somente se combinamos os elementos $2d+1$ e $2d+2$ nas partes $P_i$ e $P_j$. Como há exatamente duas formas de combiná-los de tal maneira, temos que há $k^2 - 2$ partições distintas $\mathcal{P}_2'$ não pares.
+  	 Note que a partição $\mathcal{P}_2'$ é distinta da partição $\mathcal{P}_1'$, pois ao retirarmos os elementos $2d+1$ e $2d+2$ de $\mathcal{P}_1'$ e $\mathcal{P}_2'$ obtemos $k-$partições de $2d$ termos distintas. Sendo assim, podemos somar as $k-$partições $\mathcal{P}_2'$ e $\mathcal{P}_1'$. Portanto:
+   	 
+  \begin{align}
+  	\begin{split}
+  		\Phi(2d+2, k) &\geq \Phi_{\geq 4}(2d, k) \cdot k^2 + \Phi_{2}(2d, k) \cdot k^2 - 2 \cdot \Phi_{2}(2d, k)\\
+  		&\geq (\Phi_{2}(2d, k) + \Phi_{\geq 4}(2d, k)) \cdot k^2 - 2 \cdot \Phi_{2}(2d, k)
+  	\end{split} 
+  \end{align}  
+   
+  	 Agora, tome uma $k-$partição par $\mathcal{P}_3$ de $2d$ elementos. Seja $\mathcal{P}_3'$ uma $k-$partição de $2d+2$ termos resultante das $k^2$ combinações possíveis dos elementos $2d+1$ e $2d+2$ nas $k$ partes de $\mathcal{P}_3$. Note que se os elementos $2d+1$ e $2d+2$ pertencem a mesma parte, então $\mathcal{P}_3'$ é uma $k-$partição par. Do contrário, $\mathcal{P}_3'$ é uma $k-$partição ímpar. Sendo assim, temos exatamente $k$ partições $\mathcal{P}_3'$ pares, das $k^2$ partições possíveis, pois há $k$ maneiras dos termos $2n+1$ e $2n+2$ pertencerem a mesma parte de $\mathcal{P}_3$. Logo, temos $k^2 - k$ partições não pares $\mathcal{P}_3'$. Note que $\mathcal{P}_3'$ é distinto de $\mathcal{P}_2'$ e $\mathcal{P}_1'$, pelo mesmo argumento dado anteriormente. Sendo assim: 	
+  	
+  	 \begin{align}
+  		\begin{split}
+  			\Phi(2d+2, k) &\geq (\Phi_{2}(2d, k) + \Phi_{\geq 4}(2d, k)) \cdot k^2 - 2 \cdot \Phi_{2}(2d, k) + \mu(2d, k)\cdot k  (k-1)
+  		\end{split} 
+  	\end{align}  
+  	
+  	Note que $\Phi(2d, k) = \Phi_2(2d, k) + \Phi_{\geq 4}(2d, k)$, pois, como temos um número par de elementos, não há como ter uma $k-$partição com ímpar partes de tamanho ímpar, sendo assim, $\Phi_i(2d, k) = 0$, para todo $i$ ímpar. Logo: \newl
+  	 
   	
   	\begin{align}
   		\begin{split}
-  			\mathds{P}[X_{2n+2}] \geq {P}[X_{2n}] &\longleftrightarrow  \dfrac{\Phi(2n+2, k)}{k^{2n + 2}} \geq \dfrac{\Phi(2n, k)}{k^{2n}}\\
-  			&\longleftrightarrow \Phi(2n+2, k) \geq \Phi(2n, k) \cdot k^{2}
+  			\Phi(2d+2, k) &\geq (\Phi_{2}(2d, k) + \Phi_{\geq 4}(2d, k)) \cdot k^2 - 2 \cdot \Phi_{2}(2d, k) + \mu(2n, k)\cdot k  (k-1) \\
+  			&\geq (\Phi(2d, k)) \cdot k^2 - 2 \cdot \Phi_{2}(2d, k) + \mu(2d, k)\cdot k  (k-1)
+  		\end{split} 
+  	\end{align}   
+  	
+  	Iremos demonstrar que $\mu(2d, k)\cdot k  (k-1) - 2 \cdot \Phi_2(2d, k) \geq 0$. Pelo Lema $\ref{lema5}$, temos que: 
+  	
+  	\begin{align}
+  		\begin{split}
+  			2 \cdot \Phi_2(2d, k) &= 2 \cdot \escolhe{k}{2} \cdot \varphi_2(2d, k) \\
+  			& = k(k-1) \cdot \varphi_2(2d, k)
+  		\end{split} 
+  	\end{align}  
+  	
+  	Pelo Lema $\ref{lema4}$, temos que: 
+  	
+  	\begin{align}
+  		\begin{split}
+  			k(k-1) \cdot \varphi_2(2d, k) &\leq k(k-1) \cdot \mu(2d, k)
+  		\end{split} 
+  	\end{align}  
+  	
+  	Por $(14)$ e $(15)$, temos que:
+  	
+  	\begin{align}
+  		\begin{split}
+  			2 \cdot \Phi_2(2d, k) & \leq k(k-1) \cdot \varphi_2(2d, k) \leq k(k-1) \cdot \mu(2d, k) \\
+  			& \therefore \mu(2d, k)\cdot k  (k-1) - 2 \cdot \Phi_2(2d, k) \geq 0
+  		\end{split} 
+  	\end{align} 
+  	
+  	Sendo assim, temos que $\Phi(2d+2, k) \geq \Phi(2d, k) \cdot k^2$, como desejado.
+  	
+  \end{proof} \newl
+  
+  
+  \begin{lema}  
+  	\label{lema9} 
+  	Seja $X_{2d}$ o evento de uma $k-$partição de $2d$ elementos $\mathcal{P}$ ser par. Seja $X_{2d+2}$ o evento de uma $k-$partição de $2d + 2$ elementos $\mathcal{P'}$ ser par. Temos que $\mathds{P}[X_{2d+2}] \leq \mathds{P}[X_{2d}]$.
+  \end{lema}
+  
+  \begin{proof} 
+  	
+  		Sejam $\Omega$ e $\Omega'$ os conjuntos de todas $k-$partições de $2d$ e $2d+2$ elementos, respectivamente. Note que $\mathds{P}[\overline{X_{2d}}] = \dfrac{\Phi(2d, k)}{|\Omega|}$ e $\mathds{P}[\overline{X_{2d+2}}] = \dfrac{\Phi(2d+2, k)}{|\Omega'|}$. Observe que $|\Omega| = k^{2d}$, pois cada um dos $2d$ termos pode pertencer a qualquer uma das $k$ partes independentemente. Da mesma forma, $|\Omega'| = k^{2d + 2}$. Pelo Lema $\ref{lema8}$:
+  	
+  	\begin{align}
+  		\begin{split}
+  		  &	\Phi(2d+2, k) \geq \Phi(2d, k) \cdot k^2 \\
+  		  & (\rightarrow) \dfrac{\Phi(2d+2, k)}{k^{2d+2}}	 \geq \dfrac{\Phi(2d, k)}{k^{2d+2}}	 \cdot k^2 \\
+  		  & (\rightarrow) \dfrac{\Phi(2d+2, k)}{k^{2d+2}}	 \geq \dfrac{\Phi(2d, k)}{k^{2d}}\\
+  		  & (\rightarrow) \mathds{P}[\overline{X_{2d+2}}] \geq \mathds{P}[\overline{X_{2d}}]\\
   		\end{split} 
   	\end{align}
   	
-  \end{proof}\newl
+  	 Portanto, temos que $\mathds{P}[{X_{2d+2}}] = 1 - \mathds{P}[\overline{X_{2d+2}}] \leq 1 - \mathds{P}[\overline{X_{2d}}] = \mathds{P}[{X_{2d}}]$.
+  	
+  \end{proof}\newl 
  
-  
-  \begin{lema}
-  	\label{lema7} 
-  	$\Phi(2n+2, k) \geq \Phi(2n, k) \cdot k^{2}$
-  \end{lema}
+ \begin{lema}  
+ 	\label{lema10} 
+ 	Seja $X_{2d}$ o evento de uma $k-$partição de $2d$ elementos $\mathcal{P}$ ser par. Seja $G$ um grafo de ordem $n$ colorido com $k$ cores uniforme e aleatoriamente. Seja $Y_{v}$ o evento de $v$ não ter testemunha ímpar, para $v \in V(G)$ e $d(v) = 2d$. Temos que $\mathds{P}[X_{2d}] = \mathds{P}[Y_v]$.
+ \end{lema}
+ 
+ \begin{proof}
+ 	Sabemos que há $\mu(2d, k)$ maneiras de $k-$colorir os vértices pertencentes a $N(v)$, de modo que $v$ não possua testemunha ímpar. Note que temos exatamente $\mu(2d, k) \cdot k^{n - 2d}$ maneiras de colorir $G$ com $k$ cores de modo que $v$ não possua testemunha ímpar, pois ao colorir $N(v)$ com uma das $k-$colorações contadas em $\mu(2d, k)$, podemos colorir os vértices de $V(G)\setminus N(s)$ com qualquer uma das $k$ cores disponíveis. Note que há $k^n$ formas de colorir $G$ com $k$ cores. Sendo assim: 
+ 	
+ 	\begin{align}
+ 		\begin{split}
+ 			 \mathds{P}[Y_v] = \dfrac{\mu(2d, k) \cdot k^{n - 2d}}{k^n} = \dfrac{\mu(2d, k)}{k^{2d}} = \mathds{P}[X_{2d}]
+ 		\end{split} 
+ 	\end{align}
+ 	
+ \end{proof}
+ 
+ \begin{lema}
+ 	\label{lema11} Seja $G$ um grafo. Sejam $\delta$ e $\Delta$ o grau mínimo e máximo de $G$, respectivamente. Temos que $\chi_{io}(G) \leq \ell \cdot \sqrt[\ell]{e \cdot \Delta^2}$, para $1 \leq \ell \leq \dfrac{\delta}{2}$.
+ \end{lema}
   
   \begin{proof}
-  	
-  	Note que $\Phi(2n, k) = \Phi_2(2n, k) + \Phi_{\geq 4}(2n, k)$, pois, como temos um número par de termos, não há como ter uma k-partição com ímpar partes de tamanho ímpar, sendo assim, $\Phi_i(2n, k) = 0$, para todo $i$ ímpar. Para demonstrar este lema, iremos contar as k-partições ímpares possíveis de $2n+2$ termos geradas a partir das k-partições contadas em $\Phi_2(2n, k) $, $\Phi_{\geq 4}(2n, k)$ e em $\mu(2n, k)$. \newl
-  	
-  	Tome uma k-partição $\ell$-ímpar $P_1$ de $2n$ termos, onde $\ell \geq 4$, \ie, $P_1$ é uma k-partição contada em $ \Phi_{\geq 4}(2n, k)$. Note que o termo $2n+1$ possui $k$ possibilidades de partes para formar uma nova k-partição a partir de $P_1$, pois o termo $2n+1$ pode pertencer a qualquer uma das $k$ partes de $P_1$. O mesmo vale para o termo $2n+2$. Sendo assim, temos $k^2$ k-partições $P_1'$ distintas de $2n+2$ termos possíveis a partir da partição $P_1$. Note que toda nova partição $P_1'$ resultante é uma k-partição ímpar, pois temos ao menos $4$ partes ímpares em $P_1$. Como temos $\Phi_{\geq 4}(2n, k)$ k-partições ímpares distintas com ao menos $4$ partes ímpares, temos que $\Phi(2n+2, k) \geq \Phi_{\geq 4}(2n, k) \cdot k^2$. \newl
-  	
-  	Agora, tome uma k-partição $2$-ímpar $P_2$ de $2n$ termos. Considere que as partes $C_i$ e $C_j$ tenham tamanho ímpar em $P_2$. Seja $P_2'$ uma k-partição de $2n+2$ termos resultante das $k^2$ combinações dos termos $2n+1$ e $2n+2$ nas $k$ partes de $P_2$. Se o termo $2n+1$ ou o termo $2n+2$ pertencer a alguma parte $C_x$ em $P_2$, onde $x \neq i, j$, então $P_2'$ é uma k-partição ímpar, pois $|C_x|$ é par, logo $|C_x \cup \{2n+1\}|$ é ímpar. Se ambos termos $2n+1$ e $2n+2$ pertencem à parte $C_i$, então $P_2'$ é uma k-partição ímpar, pois $|C_i \cup \{2n+1, 2n+2\}|$ é ímpar. O mesmo vale para a parte $C_j$. Se os termos $2n+1$ e $2n+2$ pertencem às partes $C_i$ e $C_j$, respectivamente ou não, então $P_2'$ é uma k-partição par, pois $C_i$ e $C_j$ são as únicas partes de tamanho ímpar em $P_2$. Sendo assim, temos $k^2 - 2$ k-partições ímpares $P_2'$ distintas a partir de $P_2$. Logo $\Phi(2n+2, k) \geq \Phi_{2}(2n, k) \cdot k^2 - 2 \cdot \Phi_{2}(2n, k)$. Note que a partição $P_2'$ resultante de $P_2$ é distinta da partição $P_1'$ resultante de $P_1$, pois ao retirarmos os termos $2n+1$ e $2n+2$ de $P_1'$ e $P_2'$ obtemos $P_1$ e $P_2$, e sabemos que $P_1$ e $P_2$ são k-partições distintas, pois $P_1$ tem exatamente duas partes de tamanho ímpar e $P_2$ tem pelo menos quatro partes de tamanho ímpar. Sendo assim, podemos somar as partições $P_2'$ obtidas de $P_2$ junto com as partições $P_1'$ obtidas de $P_1$. Portanto:
+  	Pinte os vértices de $G$ com $k$ cores aleatoriamente e independentemente, onde $k = \ell \cdot \sqrt[\ell]{e \cdot \Delta^2}$, para $1 \leq \ell \leq \dfrac{\delta}{2}$. Seja $Y_{v}$ o evento de $v$ não ter testemunha ímpar, para $v \in V(G)$. Se $v$ tem grau ímpar, sabemos que $\mathds{P}[Y_v] = 1$. Suponha que $v$ tem grau par, \ie, $d(v) = 2d$, para $d \geq 0$. Pelo Lema $\ref{lema10}$, temos que $\mathds{P}[Y_v] = \mathds{P}[X_{2d}]$, onde $X_{2d}$ é o evento de uma $k-$partição de $2d$ elementos $\mathcal{P}$ ser par. Pelo Lema $\ref{lema9}$, temos que $\mathds{P}[X_{2d}] \leq \mathds{P}[X_{2\ell}]$, para $\ell \leq d$. Note que $\mathds{P}[X_{2\ell}] =\dfrac{\mu(2\ell, k)}{k^{2\ell}} $. Pelos Lemas $6$ e $7$, temos que $\mu(2\ell, k) \leq (\ell \cdot k)^\ell$. Sendo assim: 
   	
   	\begin{align}
   		\begin{split}
-  			\Phi(2n+2, k) &\geq \Phi_{\geq 4}(2n, k) \cdot k^2 + \Phi_{2}(2n, k) \cdot k^2 - 2 \cdot \Phi_{2}(2n, k) \\
-  			&\geq \Phi(2n, k) \cdot k^2 - 2 \cdot \Phi_2(2n, k)
+  			\mathds{P}[Y_{v}] \leq \mathds{P}[X_{2\ell}] = \dfrac{\mu(2\ell, k)}{k^{2\ell}} \leq  \dfrac{(l \cdot k)^\ell}{k^{2\ell}} = \left(\dfrac{\ell}{k}\right)^\ell = \dfrac{1}{e \cdot \Delta^2}
   		\end{split} 
-  	\end{align}  
-
-  	Agora, tome uma k-partição par $P_3$ de $2n$ termos. Seja $P_3'$ uma k-partição de $2n+2$ termos resultante das $k^2$ combinações possíveis dos termos $2n+1$ e $2n+2$ nas $k$ partes de $P_3$. Note que se os termos $2n+1$ e $2n+2$ pertencem a mesma parte, então $P_3'$ é uma k-partição par. Do contrário, $P_3'$ é uma k-partição ímpar. Sendo assim das $k^2$ combinações possíveis, temos que exatamente $k$ combinações são k-partições pares, pois há $k$ maneiras dos termos $2n+1$ e $2n+2$ pertencerem a mesma parte de $P_3$. Logo, temos $k^2 - k$ partições ímpares $P_3'$ resultantes de $P_3$. Note que $P_3'$ é distinto de $P_2'$ e $P_1'$, pelo mesmo argumento dado anteriormente. Sendo assim: 	
+  	\end{align}
   	
-  	\begin{align}
-  		\begin{split}
-  			\Phi(2n+2, k) &\geq \Phi(2n, k) \cdot k^2 + \mu(2n, k)\cdot k^2 - \mu(2n, k) \cdot k - 2 \cdot \Phi_2(2n, k) \\
-  			&\geq  \Phi(2n, k) \cdot k^2 + \mu(2n, k)\cdot k  (k-1) - 2 \cdot \Phi_2(2n, k)
-  		\end{split} 
-  	\end{align}  
-  	 
-  	 Iremos demonstrar que $\mu(2n, k)\cdot k  (k-1) - 2 \cdot \Phi_2(2n, k) \geq 0$. Pelo Lema $\ref{lema5}$, temos que: 
-  	 
-  	 \begin{align}
-  	 	\begin{split}
-  	 	 2 \cdot \Phi_2(2n, k) &\leq 2 \cdot \escolhe{k}{2} \cdot \varphi_2(2n, k) \\
-  	 	 & \leq k(k-1) \cdot \varphi_2(2n, k)
-  	 	\end{split} 
-  	 \end{align}  
-  	 
-  	 Pelo Lema $\ref{lema4}$, temos que: 
-  	 
-  	 \begin{align}
-  	 	\begin{split}
-  	 		 k(k-1) \cdot \varphi_2(2n, k) &\leq k(k-1) \cdot \mu(2n, k)
-  	 	\end{split} 
-  	 \end{align}  
-  	 
-  	 Por $(14)$ e $(15)$, temos que:
-  	 
-  	 \begin{align}
-  	 	\begin{split}
-  	 		2 \cdot \Phi_2(2n, k) & \leq k(k-1) \cdot \varphi_2(2n, k) \leq k(k-1) \cdot \mu(2n, k) \\
-  	 		& \therefore \mu(2n, k)\cdot k  (k-1) - 2 \cdot \Phi_2(2n, k) \geq 0
-  	 	\end{split} 
-  	 \end{align} 
-  	 
-  	 Sendo assim, temos que $\Phi(2n+2, k) \geq \Phi(2n, k) \cdot k^2$, como desejado.
-  	 
-  \end{proof} \newl
-  
-   \begin{lema}  
-  	\label{lema8} 
-  	Seja $Y_\ell$ o evento de uma k-partição de $\ell$ termos $P$ ser par. Temos que $\mathds{P}[Y_{2n+2}] \leq \mathds{P}[Y_{2n}]$.
-  \end{lema}
-  
-  \begin{proof} 
-  	Por definição, $P$ é uma k-partição par se $|C_i|$ é par, para toda parte $C_i$. Em contrapartida, $P$ é uma k-partição ímpar se $|C_j|$ é ímpar, para alguma parte $C_j$ de $P$. Sendo assim, $\overline{X_\ell} = Y_\ell$, onde $X_\ell$ o evento de uma k-partição de $\ell$ termos $P$ ser ímpar. Logo, $\mathds{P}[Y_{\ell}] = 1 - \mathds{P}[X_{\ell}]$. Portanto: 
+  	Note que o evento $Y_v$ é dependente a no máximo $\delta^2$ eventos, para todo $v \in V(G)$. Sendo assim, pelo Lema Local de Lovász, temos que $\mathds{P}[\bigcap\limits_{v \in V(G)} \overline{Y_{v}} ] > 0$. Logo $\chi_{io} \leq k = \ell \cdot \sqrt[\ell]{e \cdot \Delta^2}$, para $1 \leq \ell \leq \dfrac{\delta}{2}$.
   	
-  	 \begin{align}
-  		\begin{split}
-  			 \mathds{P}[Y_{2n}] &= 1 - \mathds{P}[X_{2n}] \ \    \\ 
-  			 \mathds{P}[Y_{2n+2}] &= 1 - \mathds{P}[X_{2n+2}]
-  		\end{split} 
-  	\end{align} 
-  	
-  	Pelos Lemas $\ref{lema6}$ e $\ref{lema7}$, temos que $\mathds{P}[X_{2n+2}] \geq \mathds{P}[X_{2n}]$, logo: 
-  	
-  	\begin{align}
-  		\begin{split} 
-  			\mathds{P}[Y_{2n+2}] &= 1 - \mathds{P}[X_{2n+2}] \leq 1 -  \mathds{P}[X_{2n}] = \mathds{P}[Y_{2n}]
-  		\end{split} 
-  	\end{align} 
-  	
-  \end{proof}\newl
-  
+  \end{proof}
 \end{document}
  
