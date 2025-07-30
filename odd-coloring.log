@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  7 JUL 2025 18:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  28 JUL 2025 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,7 +360,10 @@ LaTeX Info: Redefining \] on input line 2954.
 )
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-)
+) (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
@@ -369,20 +372,20 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (odd-coloring.aux)
 \openout1 = `odd-coloring.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -456,12 +459,12 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \c@cor=\count317
 \c@prop=\count318
 \c@defi=\count319
-LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 
  (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
 
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -471,40 +474,33 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/nicol/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/nico
 l/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
-
- []
-
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-
- []
-
-[6] [7]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
-81.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
+60.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [8] [9] [10] (odd-coloring.aux)
+) [3]
+Underfull \hbox (badness 1221) in paragraph at lines 169--170
+[]\T1/ptm/m/n/12 Sabemos que há $\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
+ k\OT1/cmr/m/n/12 )$ \T1/ptm/m/n/12 ma-nei-ras de $\OML/cmm/m/it/12 k\OMS/cmsy/
+m/n/12 ^^@$\T1/ptm/m/n/12 colorir os vér-ti-ces de
+ []
+
+[4] [5] [6] [7] [8] (odd-coloring.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9066 strings out of 474462
- 149880 string characters out of 5742883
- 1947998 words of memory out of 5000000
- 31247 multiletter control sequences out of 15000+600000
- 578732 words of font info for 70 fonts, out of 8000000 for 9000
+ 9116 strings out of 474462
+ 150912 string characters out of 5742883
+ 1943998 words of memory out of 5000000
+ 31293 multiletter control sequences out of 15000+600000
+ 578828 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,107p,1148b,278s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,22n,107p,1320b,294s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi12.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -522,9 +518,9 @@ ts/symbols/msam10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1
 eX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
 eX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
 eX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odd-coloring.pdf (10 pages, 200061 bytes).
+Output written on odd-coloring.pdf (8 pages, 188653 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
