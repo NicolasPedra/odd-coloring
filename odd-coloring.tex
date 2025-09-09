@@ -61,64 +61,7 @@
 \newtheorem{cor}{Corolário}
 \newtheorem{prop}{Proposição}
 \newtheorem{defi}{Definição}
-
-% PARTE UM 
-% PARTE UM 
-% PARTE UM 
-% PARTE UM 
-
-{
-\begin{prop}
-	\label{prop1}
-	Seja $G$ um grafo conexo. Seja $T$ uma árvore de Busca em Largura de $G$ a partir de um vértice $v$ qualquer. Se existem vértices $s, t \in V(G)$ tais que $st \in E(G)$, $st \notin E(T)$ e $dist_T(v, s) = dist_T(v, t) + 1$, então $G$ possui ciclo par.
-\end{prop} \newbegin
-
-\begin{prop}
-	\label{prop2}
-	Seja $G$ um grafo conexo livre de ciclos pares. Seja $T$ uma Árvore de Busca em Largura de $G$ a partir de $v \in V(G)$. Seja $V \subsetneq V(G)$ o conjunto de vértices com distância $p > 0$ de $v$. Temos que o conjunto $E(G[V])$ é um emparelhamento.
-\end{prop} \newbegin
-
-
-\begin{lema}  
-	\label{lema1}
-	Seja $G$ um grafo. Se existe uma $k$-partição $V_1, V_2, \ldots ,V_k$ dos vértices de $G$ tal que, para todo vértice $v \in V(G)$, temos que $|N(v) \cap V_i| = 1$, para algum $1 \leq i \leq k$, então $\chi_{pcf}(G) \leq  \sum\limits_{i = 1}^{k} \chi(G[V_i])$.
-\end{lema}
-
-\begin{proof}
-	
-	Seja $H_i = G[V_i]$, para todo $1 \leq i \leq k$. Iremos colorir cada subgrafo $H_i$ com $\chi(H_i)$ cores distintas. Para isso, cada cor será representada por um par ordenado. Seja $c_i: V(H_i) \rightarrow \{ i \} \times \chi(H_i)$ uma coloração própria de $H_i$. Para todo par distinto de colorações $c_i$ e $c_j$, temos que $c_i(v) \neq c_j(u)$, para todo $ v \in V(H_i)$ e $ u \in V(H_j)$, pois $(i, x) \neq (j, y)$ para $i \neq j$.\newl
-	
-	Seja $c$ uma coloração de $G$ tal que $c(v) = c_i(v)$ se e somente se $v \in V(H_i)$. Em outras palavras, $c$ é a união das colorações usadas em cada subgrafo $H_i$. Como $c_i$ é uma coloração própria de $H_i$ e todo par distinto de subgrafos $H_i$ e $H_j$ são coloridos com cores distintas, temos que $c$ é uma coloração própria de $G$. \newl
-	
-	Como, para todo vértice $v \in V(G)$, vale que $|N(v) \cap V(H_i)| = 1$, para algum subgrafo $H_i$, e como as cores usadas em $H_i$ são distintas das cores usadas em $V(G)\setminus V(H_i)$, temos que existe uma cor $(i, x)$ que aparece uma única vez na vizinhança de $v$, para $x \in [\chi(H_i)]$. Sendo assim, $c$ descreve uma coloração própria livre de conflitos de $G$. Como $c_i$ utiliza $\chi(H_i)$ cores, para todo $1 \leq i \leq k$, temos que $\chi_{pcf}(G) \leq \sum\limits_{i = 1}^{k} \chi(H_i)$. 
-	
-\end{proof} 
-
-
-\begin{teo}
-	\label{teo1}
-	Seja $G$ um grafo conexo. Se $G$ é livre de ciclos pares, então $\chi_{pcf}(G) \leq 7$.
-\end{teo}
-
-\begin{proof}
-	Seja $T$ uma Árvore de Busca em Largura de $G$ a partir de um vértice $r$ qualquer. Sabemos que $T$ é uma árvore geradora, pois $G$ é conexo. Seja $V_0, V_1$, $V_2$ uma partição de $G$ tal que $x \in V_i$ se e somente se $i = dist_T(r, x) \pmod{3} $. Seja $s$ um vértice de $G$, tal que $s \neq r$. Seja $p$ o pai de $s$ em $T$ e seja $f$ um filho de $s$ em $T$.
-	Note que $p$ e $f$ pertencem a partições distintas, pois:
-	\begin{align}
-		\begin{split}
-			dist_T(r, p) \pmod{3} \neq dist_T(r, p) + 2 \pmod{3} = dist_T(r, f) \pmod{3}
-		\end{split} 
-	\end{align} 
-	
-	Seja $t \in V(G)$ um vértice tal que $dist_T(r, s) > dist_T(r, t) + 1$. Sabemos que $st \notin E(G)$, pois $T$ é uma árvore de Busca em Largura. Sendo assim, se $st \in E(G)$ e $st \notin E(T)$, então $dist_T(r, s) = dist_T(r, t) + 1$ ou $dist_T(r, s) = dist_T(r, t)$. Pela Proposição $\ref{prop1}$, sabemos que se $st \in E(G)$ e $st \notin E(T)$, então $dist_T(r, s) = dist_T(r, t)$, pois $G$ é livre de ciclos pares. Note que isto implica que $s$ é adjacente a precisamente um vértice $u$ em $G$ tal que $dist_T(r, s) = dist_T(r, u) + 1$, e, sendo assim, $u$ é o pai de $s$ em $T$, \ie, $u = p$. Note que $|N(s) \cap V_i| = 1$, onde $f \in V_i$, para todo $s \in V(G) \setminus\{r\}$. \newl
-	
-	Resta agora a partição do vértice raiz $r$. Iremos remover um vértice $v \in N(r)$ da partição $V_1$ e iremos construir uma nova partição $V_0, V^{'}_1, V_2, V_3$ de $G$, de modo que $V^{'}_1 = V_1\setminus\{v\}$ e $V_3 = \{v\}$. Seja $s$ um vértice onde $|N(s) \cap V_1| = 1$, \ie, o pai $p$ de $s$ pertence a $V_1$. Queremos argumentar que a propriedade é satisfeita para $s$ na nova partição $V_0, V^{'}_1, V_2, V_3$. Se $p \neq v$, então $|N(s) \cap V_1'| = 1$ e a propriedade continua valendo. Se $p = v$, então $N(s) \cap V_3 = \{v\}$, \ie, $ |N(s) \cap V_3| = 1$ e a propriedade vale. \newl
-	
-	Note que a partição $V_0, V_1', V_2 \text{ e } V_3$ satisfaz a condição do Lema $\ref{lema1}$. Note que pela Proposição $\ref{prop2}$, $E(G[V_i])$ é um emparelhamento. Sendo assim, temos que $\chi(G[V_i]) = 2$, para $0 \leq i \leq 2$. Note que $\chi(G[V_3]) = 1$, pois $V_3 = \{v\}$. Sendo assim, pelo Lema $\ref{lema1}$, temos que $\chi_{pcf}(G) \leq 7$.
-	
-\end{proof}  \newpage
-}
-
-
+ 
 % PARTE DOIS 
 % PARTE DOIS 
 % PARTE DOIS 
@@ -138,47 +81,64 @@
 \end{defi} \newbegin
 
 \begin{defi}
-	\label{def4}
+	\label{def3}
 	Denotamos por $\varphi_2(d, k)$ a quantidade de $k-$partições $\mathcal{P}$ não pares de $d$ elementos onde somente as duas primeiras partes $P_1, P_2 \in \mathcal{P}$ possuem cardinalidade ímpar. 
 \end{defi} \newbegin
 
 \begin{defi}
-	\label{def5}
-	Denotamos por $\chi_{io}(G)$ o menor inteiro $k$ tal que  $G$ possui uma $k-$coloração ímpar não própria. 
+	\label{def4}
+	Seja $\mathcal{H}$ um hipergrafo e seja $C : V(\mathcal{H}) \rightarrow [k]$ uma $k$-coloração dos vértices de $\mathcal{H}$. Dizemos que $C$ é uma $k$-coloração ímpar se, para toda aresta $e \in E(\mathcal{H})$, existe uma cor que aparece impar vezes nos vértices de $e$. Denotamos por $\chi_{io}(\mathcal{H})$ o menor inteiro $k$ tal que  $\mathcal{H}$ possui uma $k-$coloração ímpar.
+	
 \end{defi} \newbegin
 
+\begin{defi}
+	\label{def5}
+	Seja $G$ um grafo e seja $C : V(\mathcal{H}) \rightarrow [k]$ uma $k$-coloração dos vértices de $G$. Dizemos que $C$ é uma $k$-coloração ímpar se, para todo vértice $v \in V(G)$, existe uma cor que aparece impar vezes na vizinhança de $G$. Denotamos por $\chi_{o}(\mathcal{H})$ (resp. $\chi_{io}(\mathcal{H})$) o menor inteiro $k$ tal que $G$ possui uma $k-$coloração ímpar própria (resp. não própria).
+\end{defi} \newbegin
+
+
 \begin{prop}
-	\label{prop3}
+	\label{prop1}
 	Seja $2n!!$ o fatorial dos ímpares. Temos que $2n!! \leq n^n$.
 \end{prop} \newbegin
- 
-\begin{teo}
-	\label{teo2} 
-	$\chi_{io}(G) \leq \ell {\cdot} \sqrt[\ell]{e {\cdot} \Delta^2}$, para $1 \leq \ell \leq \blceil \dfrac{\delta(G)}{2} \brceil$. 
-\end{teo}   
 
- Para demonstrar o Teorema $\ref{teo2}$, primeiro iremos demonstrar que $\mathds{P}[X_v] = \mathds{P}[Y_{d(v)}]$, onde $X_v$ é o evento do vértice $v \in V(G)$ não ter testemunha ímpar em uma $k$-coloração arbitrária e $Y_{d(v)}$ é o evento de uma $k$-partição $\mathcal{P}$ de $d(v)$ elementos ser par. Com isso, podemos analisar apenas $\mathds{P}[Y_{d(v)}] = \dfrac{\mu(d(v), k)}{k^{d(v)}}$. Como $\mu(d(v), k)$ é igual a $0$ para $d(v)$ ímpar, iremos considerar apenas quando $d(v)$ é par. Após, iremos demonstrar um limitante superior para $\mu(d(v), k)$ e, com isso, um limitante superior para $\mathds{P}[Y_{d(v)}]$. Por fim, iremos demonstrar que $\mathds{P}[Y_{d(u)}] \leq \mathds{P}[Y_{d(v)}]$, para $d(u) \geq d(v)$, \ie, a probabilidade de uma $k$-partição $\mathcal{P}$ ser par não aumenta conforme aumentamos o número de elementos que temos que particionar, considerando que $d(u)$ e $d(v)$ são pares. Isto implica que $\mathds{P}[X_v] = \mathds{P}[Y_{d(v)}] \leq \mathds{P}[Y_{2\ell}]$, para todo $v \in V(G)$ e $1 \leq \ell \leq \dfrac{\delta(G)}{2}$. Sendo assim, utilizando o Lema Local de Lovász, iremos limitar o problema da $k$-coloração ímpar não própria por $\delta(G)$.  \newpage 
+\begin{teo}
+	\label{teo1} 
+	Seja $\mathcal{H}$ um hipergrafo tal que cada aresta $e \in E(\mathcal{H})$ possui pelo menos $2t$ vértices, para $t > 0$, e cada aresta $e$ intersecta no máximo $\Gamma$ outras arestas. Temos que $\chi_{io}(\mathcal{H}) \leq t {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$
+\end{teo} \newbegin
  
+
+\begin{cor} 
+	\label{cor1}  
+	$\chi_{io}(\mathcal{H}) \in \mathcal{O}(ln(\Gamma) {\cdot} \Gamma^{1/t})$
+\end{cor}
+
+	A demonstração segue do Teorema $\ref{teo1}$. Se $t \geq 1 + ln (\Gamma + 1)$, substituindo $t$ por $ln(e {\cdot} (\Gamma + 1))$, temos que $\chi_{io}(\mathcal{H}) \in \mathcal{O}(ln(\Gamma))$. Se $t < 1 + ln (\Gamma + 1)$, então $\chi_{io}(\mathcal{H}) \leq (1 + ln (\Gamma + 1)) {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$, pelo Teorema $\ref{teo1}$, e o resultado segue. \newbegin
+	
+\begin{cor}
+	\label{cor2}  
+	Seja $G$ um grafo com $\delta(G) \geq 2t$, para $t > 0$. Temos que $\chi_{io}(G) \leq t {\cdot} (e {\cdot} (\Delta^2 + 1))^{1/t}$.
+\end{cor}
+	 
+	  Seja $\mathcal{H} = (V(G), E)$ um hipergrafo tal que $E = \bigcup\limits_{v \in V(G)}N_G(v)$, \ie, $\mathcal{H}$ possui uma aresta $e_v$ para cada vértice $v \in V(G)$ e cada aresta $e_v \in E(\mathcal{H})$ contém os vértices adjacentes a $v$ em $G$. Note que uma $k$-coloração  ímpar $c$ para $\mathcal{H}$ também é uma $k$-coloração ímpar para $G$. Como cada aresta em $\mathcal{H}$ intersecta no máximo $\Delta^2$ outras arestas, pelo Teorema $\ref{teo1}$, temos o resultado desejado. \newbegin
+
+\begin{cor}
+	\label{cor3}  
+	 $\chi_{io}(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t})$.
+\end{cor}
+     
+     A demonstração é similar ao Corolário $\ref{cor1}$.
+\newbegin
+
+\begin{teo}
+	\label{teo2}  
+	Seja $G$ um grafo com $\delta(G) \geq 2t$, para $t > 0$. Se $\chi(G) \in \mathcal{O}(1)$, então $\chi_{o}(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t})$ .
+\end{teo}
+
+ \newpage
  
  \begin{lema}  
- 	\label{lema2} 
- 	Seja $G$ um grafo de ordem $n$ colorido com $k$ cores uniforme e aleatoriamente. Seja $X_{v}$ o evento do vértice $v \in V(G)$ não ter testemunha ímpar. Seja $Y_{d(v)}$ o evento de uma $k-$partição de $d(v)$ elementos $\mathcal{P}$ ser par.  Temos que $\mathds{P}[X_{v}] = \mathds{P}[Y_{d(v)}]$.
- \end{lema}
- 
- \begin{proof}
- 	Sabemos que há $\mu(d(v), k)$ maneiras de $k-$colorir os vértices de $N(v)$, de modo que $v$ não possua testemunha ímpar. Note que temos exatamente $\mu(d(v), k) {\cdot} k^{n - d(v)}$ maneiras de colorir $G$ com $k$ cores de modo que $v$ não possua testemunha ímpar, pois ao colorir $N(v)$ com uma das $k-$colorações contadas em $\mu(d(v), k)$, podemos colorir os vértices de $V(G)\setminus N(v)$ com qualquer uma das $k$ cores disponíveis. Note que há $k^n$ formas de colorir $G$ com $k$ cores. Sendo assim: 
- 	
- 	\begin{align}
- 		\begin{split}
- 			\mathds{P}[X_v] = \dfrac{\mu(d(v), k) {\cdot} k^{n - d(v)}}{k^n} = \dfrac{\mu(d(v), k)}{k^{d(v)}} = \mathds{P}[Y_{d(v)}]
- 		\end{split} 
- 	\end{align}
- 	
- \end{proof}
- 
- 
- \begin{lema}  
- 	\label{lema3} 
+ 	\label{lema1} 
  	$\mu(2d, k) \leq (2d - 1) \cdot k \cdot \mu(2d - 2, k)$, para $d \geq 1$.
  \end{lema}
  
@@ -188,15 +148,15 @@
  
  
   \begin{lema}  
- 	\label{lema4} 
+ 	\label{lema2} 
  	$\mu(2d, k) \leq (d {\cdot} k)^d$, para $d \geq 1$.
  \end{lema}
  
- \begin{proof} Iremos demonstrar por indução em $d$ que $\mu(2d, k) \leq 2d!! \cdot k^d$. Como $2d!! \leq d^d$, pela Proposição $\ref{prop3}$, disto segue que $\mu(2d, k) \leq (d {\cdot} k)^d$. 
+ \begin{proof} Iremos demonstrar por indução em $d$ que $\mu(2d, k) \leq 2d!! \cdot k^d$. Como $2d!! \leq d^d$, pela Proposição $\ref{prop1}$, disto segue que $\mu(2d, k) \leq (d {\cdot} k)^d$. 
  	
- 	Base ($d = 1$): Pelo Lema $\ref{lema3}$, temos que $\mu(2, k) \leq k \cdot \mu(0, k)= 2!! \cdot k$ e o resultado segue.
+ 	Base ($d = 1$): Pelo Lema $\ref{lema1}$, temos que $\mu(2, k) \leq k \cdot \mu(0, k)= 2!! \cdot k$ e o resultado segue.
  	
- 	Passo ($d > 1$): Suponha que $\mu(2\ell, k) \leq (2\ell)!! \cdot k^{\ell}$, para $1 \leq \ell < d$. Pelo Lema $\ref{lema3}$, $\mu(2d, k) \leq (2d - 1) \cdot k \cdot \mu(2 {\cdot} (d - 1), k)$. Por $HI$, temos que: 
+ 	Passo ($d > 1$): Suponha que $\mu(2\ell, k) \leq (2\ell)!! \cdot k^{\ell}$, para $1 \leq \ell < d$. Pelo Lema $\ref{lema1}$, $\mu(2d, k) \leq (2d - 1) \cdot k \cdot \mu(2 {\cdot} (d - 1), k)$. Por $HI$, temos que: 
  	\begin{align}
  		\begin{split}
 			\mu(2 {\cdot} (d - 1), k) \leq (2d - 2)!! \cdot k^{d-1}
@@ -216,7 +176,7 @@
  
  
 \begin{lema}   
-	\label{lema5}
+	\label{lema3}
 	\begin{equation}
 		\mu(2d, k) =
 		\begin{cases}
@@ -240,7 +200,7 @@
 
 
 \begin{lema}    
-	\label{lema6}
+	\label{lema4}
 	\begin{equation}
 		\varphi_2(2d, k) =
 		\begin{cases}
@@ -256,7 +216,7 @@
 	
 	Caso 1 ($k \leq 1$): Se $k \leq 1$, então não há como $k$-particionar os $2d$ elementos de modo que apenas as partes $P_1$ e $P_2$ tenham tamanho ímpar. Portanto, $\varphi(2d, k) = 0$. \newl
 	
-	Caso 2 ($k = 2$): Se $k = 2$, então qualquer $k$-partição $\mathcal{P} = \{P_1, P_2\}$ de $2d$ elementos é contada em $\mu(2d, 2)$ ou em $\varphi_2(2d, 2)$, pois como temos um número par de elementos, ambas partes $P_1$ e $P_2$ têm tamanho par ou ímpar. Logo $\mu(2d, 2) + \varphi_2(2d, 2) = 2^{2d}$, pois $2^{2d}$ é o total de $2$-partições possíveis de $2d$ elementos. Pelo Lema $\ref{lema5}$:
+	Caso 2 ($k = 2$): Se $k = 2$, então qualquer $k$-partição $\mathcal{P} = \{P_1, P_2\}$ de $2d$ elementos é contada em $\mu(2d, 2)$ ou em $\varphi_2(2d, 2)$, pois como temos um número par de elementos, ambas partes $P_1$ e $P_2$ têm tamanho par ou ímpar. Logo $\mu(2d, 2) + \varphi_2(2d, 2) = 2^{2d}$, pois $2^{2d}$ é o total de $2$-partições possíveis de $2d$ elementos. Pelo Lema $\ref{lema3}$:
 	
 	\begin{align}
 		\begin{split}
@@ -267,17 +227,17 @@
 	Logo, temos que $\varphi_2(2d, 2)  = 2^{2d} - 2^{2d - 1} = 2^{2d - 1}$ e o resultado segue. \newl
 	
 	
-	Caso 3 ($k > 2$): Iremos construir as $k$-partições não pares $\mathcal{P} = \{P_1, P_2, \ldots P_k\}$ possíveis de $2d$ elementos. Como $k > 2$, existe uma parte $P_i \in \mathcal{P}$, onde $|P_i|$ é par. Sendo assim, a demonstração segue de modo análogo à demonstração do Lema $\ref{lema5}$, com a única restrição de que $|P_i| < 2d$, pois as partes $P_1$ e $P_2$ tem ao menos um elemento.
+	Caso 3 ($k > 2$): Iremos construir as $k$-partições não pares $\mathcal{P} = \{P_1, P_2, \ldots P_k\}$ possíveis de $2d$ elementos. Como $k > 2$, existe uma parte $P_i \in \mathcal{P}$, onde $|P_i|$ é par. Sendo assim, a demonstração segue de modo análogo à demonstração do Lema $\ref{lema3}$, com a única restrição de que $|P_i| < 2d$, pois as partes $P_1$ e $P_2$ tem ao menos um elemento.
 \end{proof} \newl
   
 
 \begin{lema} 
-	\label{lema7} 
+	\label{lema5} 
 	$\mu(2d, k) \leq \mu(2d - 2, k) {\cdot} k^{2}$, para $d \geq 1$.
 \end{lema}
 
 \begin{proof}
-	Iremos provar que $\mu(2d, k) = k {\cdot} \mu(2d - 2, k) + (k^2 - k) {\cdot} \varphi_2(2d - 2, k)$. Disto segue que $\mu(2d, k) \leq \mu(2d - 2, k) {\cdot} k^{2}$, pois, pelos Lemas $\ref{lema5}$ e $\ref{lema6}$, temos que $\varphi_2(2d - 2, k) \leq \mu(2d - 2, k)$, considerando que ambos possuem uma recorrência similar e ainda $\varphi_2(2d, 2) = \mu(2d, 2)$. Sejam dois elementos distintos $x, y \in [2d]$. Iremos construir uma $k$-partição par $\mathcal{P}$ de $2d$ elementos com base em duas escolhas: se $x$ e $y$ irão pertencer a mesma parte $P_i \in \mathcal{P}$ ou não. \newl
+	Iremos provar que $\mu(2d, k) = k {\cdot} \mu(2d - 2, k) + (k^2 - k) {\cdot} \varphi_2(2d - 2, k)$. Disto segue que $\mu(2d, k) \leq \mu(2d - 2, k) {\cdot} k^{2}$, pois, pelos Lemas $\ref{lema3}$ e $\ref{lema4}$, temos que $\varphi_2(2d - 2, k) \leq \mu(2d - 2, k)$, considerando que ambos possuem uma recorrência similar e ainda $\varphi_2(2d, 2) = \mu(2d, 2)$. Sejam dois elementos distintos $x, y \in [2d]$. Iremos construir uma $k$-partição par $\mathcal{P}$ de $2d$ elementos com base em duas escolhas: se $x$ e $y$ irão pertencer a mesma parte $P_i \in \mathcal{P}$ ou não. \newl
 	
 	Caso 1: Se escolhermos que $x$ e $y$ irão pertencer a mesma parte $P_i \in \mathcal{P}$, então devemos escolher uma parte $P_i$ das $k$ partes disponíveis. Após, devemos escolher uma $k$-partição par $\mathcal{P'}$ de $2d - 2$ elementos para os elementos restantes. Sendo assim, para este caso, temos $k {\cdot} \mu(2d - 2, k)$ partições possíveis. \newl 
 	
@@ -286,70 +246,38 @@
 	
 \end{proof} \newl
 
-
-\begin{lema}  
-	\label{lema8} 
-	Seja $Y_{2d}$ o evento de uma $k-$partição de $2d$ elementos $\mathcal{P}$ ser par, para $d \geq 1$. Seja $Y_{2d-2}$ o evento de uma $k-$partição de $2d - 2$ elementos $\mathcal{P'}$ ser par. Temos que $\mathds{P}[Y_{2d}] \leq \mathds{P}[Y_{2d-2}]$.
-\end{lema}
  
-\begin{proof} 
-	Pelo Lema $\ref{lema7}$, temos que $\mu(2d, k) \leq \mu(2d - 2, k) {\cdot} k^{2}$. Logo:  
+\begin{proof}[Demonstração do Teorema~\ref{teo1}]
+	Pinte os vértices de $\mathcal{H}$ com $k = t {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$ cores aleatoriamente e independentemente. Seja $X_{e}$ o evento da aresta $e \in E(\mathcal{H})$ não ter uma cor que apareça ímpar vezes, onde $|e|$ é ímpar. Note que $\mathds{P}[X_{e}] = \dfrac{\mu(|e|, k)}{k^{|e|}}$. Como $|e| \geq 2t$, pelo Lema $\ref{lema5}$, temos que: 
 	\begin{align}
 		\begin{split}
-		  \mathds{P}[Y_{2d}] = \dfrac{\mu(2d, k)}{k^{2d}} \leq \dfrac{\mu(2d - 2, k) {\cdot} k^{2}}{k^{2d}} = \dfrac{\mu(2d - 2, k)}{k^{2d-2}} = \mathds{P}[Y_{2d-2}]
+			\mu(|e|, k) \leq \mu(|e| - (|e| - 2t), k) {\cdot} k^{|e| - 2t} = \mu(2t, k) {\cdot} k^{|e| - 2t}
 		\end{split} 
-	\end{align}
-	 
-\end{proof}\newl 
+	\end{align} 
 
- 
-\begin{proof}[Demonstração do Teorema~\ref{teo2}]
-	Pinte os vértices de $G$ com $k = \ell {\cdot} \sqrt[\ell]{e {\cdot} \Delta^2}$ cores aleatoriamente e independentemente, onde $1 \leq \ell \leq \blceil \dfrac{\delta(G)}{2} \brceil$. Seja $X_{v}$ o evento de $v$ não ter testemunha ímpar, para $v \in V(G)$. Pelo Lema $\ref{lema2}$, temos que $\mathds{P}[X_v] = \mathds{P}[Y_{d(v)}]$, onde $Y_{d(v)}$ é o evento de uma $k-$partição de $d(v)$ elementos $\mathcal{P}$ ser par. Pelo Lema $\ref{lema8}$, temos que $\mathds{P}[X_v] = \mathds{P}[Y_{d(v)}] \leq \mathds{P}[Y_{2\ell}]$, para todo $v \in V(G)$. Pelo Lema $\ref{lema4}$,  $\mathds{P}[Y_{2\ell}] =\dfrac{\mu(2\ell, k)}{k^{2\ell}} \leq \dfrac{(\ell {\cdot} k)^\ell}{k^{2\ell}} = \left(\dfrac{\ell}{k}\right)^\ell$. Portanto: 
-	
-	\begin{align}
-		\begin{split}
-			\mathds{P}[X_{v}] \leq \mathds{P}[Y_{2\ell}] \leq \left(\dfrac{\ell}{k}\right)^\ell = \left(\dfrac{\ell}{\ell {\cdot} \sqrt[\ell]{e {\cdot} \Delta^2}}\right)^\ell = \dfrac{1}{e {\cdot} \Delta^2}
-		\end{split} 
-	\end{align}
-	
-	Note que cada evento $X_v$ é dependente a no máximo $\Delta^2 - \Delta$ outros eventos, para todo $v \in V(G)$. Sendo assim, pelo Lema Local de Lovász, temos que $\mathds{P}[\bigcap\limits_{v \in V(G)} \overline{X_{v}} ] > 0$. Portanto, existe uma $k$-coloração onde $v$ tem testemunha ímpar, para todo $v \in V(G)$. Logo, $\chi_{io}(G) \leq k = \ell {\cdot} \sqrt[\ell]{e {\cdot} \Delta^2}$, para $1 \leq \ell \leq \dfrac{\delta}{2}$.
-	
-\end{proof}\newpage
-}
+	Pelo Lema $\ref{lema2}$:
+ 	\begin{align}
+ 		\begin{split}
+ 			\mu(2t, k) \leq (t {\cdot } k)^t
+ 		\end{split} 
+ 	\end{align} 
   
-% PARTE TRÊS
-% PARTE TRÊS
-% PARTE TRÊS
-% PARTE TRÊS
-
-{
-\begin{defi}
-	Seja $G$ um grafo. Denotamos por $\tau(e)$ a quantidade de ciclos que a aresta $e \in E(G)$ pertence. Denotamos por $\tau(G) = max(\tau(e): \forall e \in E(G))$.
-\end{defi} \newbegin
-
-\begin{prop}
-	\label{prop4}
-	Se $G$ um grafo $k-$crítico, então $G$ é $(k-1)$-aresta-conexo.
-\end{prop}\newbegin
-
-\begin{teo}
-	$\chi(G) \leq \tau(G) + 2$.
-\end{teo}
-
-\begin{proof}
-	Suponha que o enunciado não vale e seja $G$ um contraexemplo com o menor número de arestas possível. Pela minimalidade de $G$, temos que $H$ não é um contraexemplo, para qualquer $H \subsetneq G$, \ie, $\chi(H) \leq \tau(H) + 2$. Como $\chi(G) \geq \tau(G) + 3$ e $\tau(G) \geq \tau(H)$, temos que:
-	
+    Portanto, por $(7)$ e $(8)$:
+    
 	\begin{align}
 		\begin{split}
-			\chi(G) \geq \tau(G) + 3 &\geq \tau(H) + 3 \geq \chi(H) + 1 \\
-			\therefore \chi(G) &> \chi(H)
+			\mathds{P}[X_{e}] = \dfrac{\mu(|e|, k)}{k^{|e|}} 
+			 \leq \left(\dfrac{t}{k}\right)^t  = \left(\dfrac{t}{t {\cdot}   (e {\cdot} (\Gamma + 1))^{1/t}}\right)^t = \dfrac{1}{e {\cdot} (\Gamma + 1)}
 		\end{split} 
 	\end{align}
 	
-	Portanto, temos que $G$ é $\chi-$crítico, onde $\chi = \chi(G)$. Pela Proposição $\ref{prop4}$, temos que $G$ é $(\chi - 1)$-aresta-conexo. Como $G$ é $(\chi - 1)$-aresta-conexo, sabemos que $G$ possui pelo menos $\chi - 1$ $uv$-caminhos disjuntos nas arestas, para todo par distinto $u, v \in V(G)$. Sejam $P_1, P_2, \ldots P_{\chi - 1}$ caminhos disjuntos nas arestas de $G$. Seja $e$ a aresta que incide em $u$ em $P_1$. Note que $P_1 \cup P_j$ contém um ciclo $C$, tal que $e \in E(C)$, para $1 < j \leq \chi - 1$, pois $P_1$ e $P_j$ são $uv$-caminhos distintos. Logo $\tau(G) \geq \tau(e) \geq \chi(G) - 2$. Portanto, $\chi(G) \geq \tau(G) + 3 \geq \chi(G) - 2 + 3 = \chi(G) + 1$, uma contradição.
+  Sendo assim, pelo Lema Local de Lovász, temos que $\mathds{P}[\bigcap\limits_{e \in E(\mathcal{H})} \overline{X_{e}} ] > 0$. Portanto, existe uma $k$-coloração tal que existe uma cor que aparece ímpar vezes nos vértices de $e$, para toda aresta $e \in E(\mathcal{H})$. Logo, $\chi_{io}(\mathcal{H}) \leq k = t {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$.
 	
-\end{proof}
-}
+\end{proof}\newbegin
+ 
+ \begin{proof}[Demonstração do Teorema~\ref{teo2}]
+ 	Iremos provar que $\chi_{o}(G) \leq \chi(G) {\cdot} \chi_{io}(G)$. Disto segue que $\chi_{io}(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t})$, pois $\chi(G) \in \mathcal{O}(1)$ e, pelo Corolário $\ref{cor3}$, $\chi_{io}(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t})$. Seja $\mathcal{P} = \{P_1, P_2 \ldots, P_k\}$ uma $k$-coloração ímpar mínima. Para cada parte $P_i \in \mathcal{P}$, pinte os vértices de $P_i$ com uma coloração própria mínima de $G[P_i]$, utilizando cores distintas para cada parte $P_i \in \mathcal{P}$. Ao final, temos uma coloração $c$ de $G$ utilizando no máximo $\chi(G) {\cdot} \chi_{io}(G)$ cores. Afirmamos que $c$ é uma coloração ímpar e própria. Note que $c$ é própria, pois tome $uv \in E(G)$, se $u \in P_i$ e $v \in P_j$, tal que $i \neq j$, onde $P_i, P_j \in \mathcal{P}$, então $u$ e $v$ possuem cores distintas, se $u, v \in P_i$, então $u$ e $v$ possuem cores distintas, pois $P_i$ é colorido propriamente com $\chi(G[P_i])$ cores. Observe que, para todo $v \in V(G)$, existe uma parte $P_i \in \mathcal{P}$, tal que $|S|$ é ímpar, onde $S = P_i \cap N_G(v)$. Seja $T = N_G(v) \setminus S$. Note que existe uma cor em $c$ que aparece ímpar vezes em $S$, pois $|S|$ é ímpar. Como $c(s) \neq c(t)$, para $s \in S$ e $t \in T$, pois $s$ e $t$ pertencem a partes distintas de $\mathcal{P}$, temos que existe uma cor que aparece ímpar vezes em $N_G(v)$.
+ \end{proof}
  
 \end{document}
  

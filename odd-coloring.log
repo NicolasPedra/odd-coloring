@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  28 JUL 2025 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  9 SEP 2025 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,12 +459,12 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \c@cor=\count317
 \c@prop=\count318
 \c@defi=\count319
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
 
  (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
 
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -473,54 +473,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/nicol/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/nico
-l/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-60.
+l/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2] [3]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
+51.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [3]
-Underfull \hbox (badness 1221) in paragraph at lines 169--170
-[]\T1/ptm/m/n/12 Sabemos que há $\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/
-m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;
- k\OT1/cmr/m/n/12 )$ \T1/ptm/m/n/12 ma-nei-ras de $\OML/cmm/m/it/12 k\OMS/cmsy/
-m/n/12 ^^@$\T1/ptm/m/n/12 colorir os vér-ti-ces de
- []
-
-[4] [5] [6] [7] [8] (odd-coloring.aux)
+) [4] [5] (odd-coloring.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 70 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 9116 strings out of 474462
- 150912 string characters out of 5742883
+ 9113 strings out of 474462
+ 150907 string characters out of 5742883
  1943998 words of memory out of 5000000
- 31293 multiletter control sequences out of 15000+600000
- 578828 words of font info for 71 fonts, out of 8000000 for 9000
+ 31290 multiletter control sequences out of 15000+600000
+ 575444 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,107p,1320b,294s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmex10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi6.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nicol/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nicol/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nicol/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/n
-icol/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
-/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsro
-m12.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
-eX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
-eX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKT
-eX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odd-coloring.pdf (8 pages, 188653 bytes).
+ 108i,17n,107p,1467b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nicol/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nicol/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nicol/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nic
+ol/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
+sers/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom1
+2.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8
+a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8
+a.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on odd-coloring.pdf (5 pages, 145458 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
