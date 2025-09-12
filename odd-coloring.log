@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  12 SEP 2025 00:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  12 SEP 2025 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -474,35 +474,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/nicol/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/nico
 l/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2]
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 151.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 170.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 151.
+(Font)              size <12> substituted on input line 170.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 151.
+(Font)              size <6> substituted on input line 170.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <13> not available
-(Font)              size <12> substituted on input line 151.
+(Font)              size <12> substituted on input line 170.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 151.
+(Font)              size <6> substituted on input line 170.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <13> not available
-(Font)              size <12> substituted on input line 151.
+(Font)              size <12> substituted on input line 170.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 151.
+(Font)              size <6> substituted on input line 170.
 
 [3] [4]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
-64.
+83.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -510,7 +510,7 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 336.
+(amsmath)                 on input line 355.
 
 [7] [8] [9] (odd-coloring.aux)
  ***********
@@ -534,7 +534,7 @@ Here is how much of TeX's memory you used:
  31335 multiletter control sequences out of 15000+600000
  593500 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,107p,1467b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,107p,1491b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx12.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX
@@ -554,7 +554,7 @@ grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nicol/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/nicol/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/nicol/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on odd-coloring.pdf (9 pages, 215566 bytes).
+Output written on odd-coloring.pdf (9 pages, 216873 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
