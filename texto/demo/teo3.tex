@@ -1,0 +1,130 @@
+ 
+\section{Demonstração do Teorema $\ref{teo3}$} \newl
+
+$\textbf{Lembrete:}$ \newl
+
+$e^x = \sum\limits_{i = 0}^{\infty}\dfrac{x^i}{i!} = x^0 + \dfrac{x^1}{1!} + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \ldots$ \newl
+
+$e^{-x} = \sum\limits_{i = 0}^{\infty}(-1)^i {\cdot } \dfrac{ x^i}{i!} = x^0 +-\dfrac{x^1}{1!} + \dfrac{x^2}{2!} - \dfrac{x^3}{3!} + \ldots$ \newl
+
+$\dfrac{e^x + e^{-x}}{2} = \sum\limits_{i = 0}^{\infty}  \dfrac{ x^{2}}{2i!} = x^0 +-\dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \ldots$ \newl
+
+\vspace{5mm}
+
+\begin{lema}
+	\label{lema6}
+	$\mu(d, k) = \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k} \escolhe{k}{i} {\cdot} (k - 2i)^{d}$
+\end{lema}
+
+\begin{proof} 
+	Note que: \newl
+	
+	\begin{align}
+		\begin{split}
+			\mu(d, k) =  \mathop{\sum_{a_1 + a_2 + \ldots a_k = d}}_{\text{com $a_i$ par p/ $1 \leq i \leq k$}}\binom{d}{a_1, a_2, \ldots, a_k} 
+		\end{split} 
+	\end{align}
+	
+	Ou seja, $\mu(d, k)$ é igual ao somatório multinomial de todas as possibilidades onde $a_1 + a_2 + \ldots a_k = d$ com $a_i$ par, para todo $1 \leq i \leq k$. Sendo assim:
+	
+	\begin{align}
+		\begin{split}
+			\label{l6_1}
+			\mu(d, k) &=  \mathop{\sum_{a_1 + a_2 + \ldots a_k = d}}_{\text{com $a_i$ par p/ $1 \leq i \leq k$}}\binom{d}{a_1, a_2, \ldots, a_k} \\
+			&= \mathop{\sum_{a_1 + a_2 + \ldots a_k = d}}_{\text{com $a_i$ par p/ $1 \leq i \leq k$}}\dfrac{d!}{a_1! {\cdot} a_2! \ldots {\cdot} a_k!} \\
+			\therefore \dfrac{\mu(d, k)}{d!} &= \mathop{\sum_{a_1 + a_2 + \ldots a_k = 2}}_{\text{com $a_i$ par p/ $1 \leq i \leq k$}}\dfrac{1}{a_1! {\cdot} a_2! \ldots {\cdot} a_k!}
+		\end{split} 
+	\end{align}
+	
+	
+	Note que $\sum\limits_{a_1 + a_2 + \ldots a_k = d \atop \text{com $a_i$ par p/ $1 \leq i \leq k$}} \dfrac{1}{a_1! {\cdot} a_2! \ldots {\cdot} a_k!}$ é o coeficiente de $x^{d}$ na série de potência $\left(\dfrac{e^x + e^{-x}}{2}\right)^k$. Sendo assim, agora iremos calcular qual o valor do coeficiente $x^{d}$ nesta série. Note que:
+	
+	\begin{align}
+		\begin{split}
+			\label{l6_2}
+			\left(\dfrac{e^x + e^{-x}}{2}\right)^k &= \dfrac{1}{2^k} {\cdot} (e^x + e^{-x})^k \\
+			&= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i}(e^x)^{k-i} {\cdot} (e^{-x})^i \\
+			&= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i}(e^x)^{k-i} {\cdot} (e^{x})^{-i} \\
+			&= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i}(e^x)^{k-2i}  \\
+			&= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i}e^{x {\cdot}(k - 2i)}
+		\end{split} 
+	\end{align}
+	
+	Observe que:
+	
+	\begin{align}
+		\begin{split}
+			\label{l6_3}
+			e^{x {\cdot}(k - 2i)} = \sum\limits_{j = 0}^{\infty} \dfrac{(x {\cdot}(k - 2i))^j}{j!} = \sum\limits_{j = 0}^{\infty} \dfrac{x^j {\cdot}(k - 2i)^j}{j!}
+		\end{split} 
+	\end{align}
+	
+	Por $(\ref{l6_1})$, $(\ref{l6_2})$ e $(\ref{l6_3})$, temos que:
+	
+	\begin{align}
+		\begin{split} 
+			\sum\limits_{a_1 + a_2 + \ldots a_k = d \atop \text{com $a_i$ par p/ $1 \leq i \leq k$}} \dfrac{1}{a_1! {\cdot} a_2! \ldots {\cdot} a_k!} &= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i} {\cdot} \dfrac{(k - 2i)^{d}}{d!} \\
+			\therefore \mu(d, k) &= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i} {\cdot} (k - 2i)^{d}
+		\end{split} 
+	\end{align}
+	
+\end{proof}
+
+\begin{proof}[Demonstração do Teorema~\ref{teo3}]
+	Pelo Lema $\ref{lema6}$:
+	
+	\begin{align}
+		\begin{split} 
+			\mu(d, k) &= \dfrac{1}{2^k} {\cdot} \sum\limits_{i = 0}^{k}\escolhe{k}{i} {\cdot} (k - 2i)^{d} \\
+			&= \dfrac{1}{2^k} {\cdot} \left(  \sum\limits_{i = 0}^{ \blfloor \frac{k}{2} \brfloor  }\escolhe{k}{i} {\cdot} (k - 2i)^{d} +   \sum\limits_{i = \blfloor \frac{k}{2} \brfloor + 1  }^{k}\escolhe{k}{i} {\cdot} (k - 2i)^{d} \right)
+		\end{split} 
+	\end{align}
+	
+	Sejam $x = \sum\limits_{i = 0}^{ \blfloor \frac{k}{2} \brfloor  }\escolhe{k}{i} {\cdot} (k - 2i)^{d} $ e $y = \sum\limits_{i = \blfloor \frac{k}{2} \brfloor + 1  }^{k}\escolhe{k}{i} {\cdot} (k - 2i)^{d}$. Iremos provar que $x=y$. Para isso, suponha que $k$ é par. Temos que: 
+	\begin{align}
+		\begin{split}  
+			x = \escolhe{k}{0}k^{d} + \escolhe{k}{1}(k-2)^{d} + \escolhe{k}{2}(k-4)^{d} \ldots + \escolhe{k}{\frac{k}{2} - 1}2^{d} + \escolhe{k}{\frac{k}{2}}0^{d}
+		\end{split} 
+	\end{align}
+	
+	Note que: 
+	\begin{align}
+		\begin{split}  
+			y &= \escolhe{k}{\frac{k}{2} + 1}(-2)^{d} + \escolhe{k}{\frac{k}{2} + 2}(-4)^{d} \ldots + \escolhe{k}{k-1}(-(k-2))^{d} + \escolhe{k}{k}(-k)^{d} \\
+			&= \escolhe{k}{\frac{k}{2} - 1}2^{d} + \escolhe{k}{\frac{k}{2} - 2}4^{d} \ldots + \escolhe{k}{1}(k-2)^{d} + \escolhe{k}{0}k^{d}
+		\end{split} 
+	\end{align}
+	
+	Logo $x = y$. Sendo assim:
+	
+	\begin{align}
+		\begin{split}
+			\label{l6_4} 
+			\mu(d, k) &= \dfrac{2}{2^k} {\cdot}  \sum\limits_{i = 0}^{  \frac{k}{2}   }\escolhe{k}{i} {\cdot} (k - 2i)^{d}  \\
+			&= \dfrac{1}{2^{k-1}} {\cdot}  \sum\limits_{i = 0}^{  \frac{k}{2}   }\escolhe{k}{i} {\cdot} (k - 2i)^{d} \\
+			&\geq \dfrac{1}{2^{k-1}} {\cdot}  \sum\limits_{i = 0}^{  \frac{k}{2}   }(k - 2i)^{d} \\
+			&\geq \dfrac{1}{2^{k-1}} {\cdot}  \sum\limits_{i = 0}^{  \frac{k}{2}   }2i^{d} \\
+			&\geq \dfrac{2^{d}}{2^{k-1}} {\cdot}  \sum\limits_{i = 0}^{  \frac{k}{2}   }i^{d}
+		\end{split} 
+	\end{align}
+	
+	Pelos Lema $\ref{lema2}$ e $\ref{lema5}$:
+	
+	\begin{align}
+		\begin{split} 
+			\label{l6_5} 
+			\mu(d, k) \leq \mu(2t, k) {\cdot} k^{d - 2t}  \leq  (t {\cdot} k)^{t} {\cdot} k^{d - 2t} \leq t^t {\cdot} k^{d-t}, \ \text{para} \ 1 \leq t \leq \frac{d}{2}
+		\end{split} 
+	\end{align}
+	
+	Por ($\ref{l6_4}$) e ($\ref{l6_5}$), temos que:
+	
+	\begin{align}
+		\begin{split} 
+			\sum\limits_{i = 0}^{  \frac{k}{2}   }i^{d} &\leq \left(\dfrac{k}{2} \right)^{d} {\cdot} \left(\dfrac{t}{k} \right)^t  {\cdot} 2^{k-1}  \\
+			(\rightarrow) \ \ \sum\limits_{i = 0}^{ k }i^{d} &\leq  k^{d} {\cdot} \left(\dfrac{t}{2k} \right)^t  {\cdot} 2^{2k-1}    \\ 
+			(\rightarrow) \ \ \sum\limits_{i = 0}^{ k }i^{d}  &\leq k^{d-t} {\cdot} t^t  {\cdot} 2^{2k-t-1} 
+		\end{split} 
+	\end{align}
+	
+\end{proof}

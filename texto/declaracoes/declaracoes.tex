@@ -1,0 +1,62 @@
+\begin{teo}
+	\label{teo1} 
+	Seja $\mathcal{H}$ um hipergrafo tal que cada aresta $e \in E(\mathcal{H})$ possui pelo menos $2t$ vértices, para $t > 0$, e cada aresta $e$ intersecta no máximo $\Gamma$ outras arestas. Temos que $\chi_{io}(\mathcal{H}) \leq t {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$
+\end{teo} \newbegin 
+
+\begin{cor} 
+	\label{cor1}  
+	$\chi_{io}(\mathcal{H}) \in \mathcal{O}(ln(\Gamma) {\cdot} \Gamma^{1/t})$
+\end{cor}
+
+A demonstração segue do Teorema $\ref{teo1}$. Se $t \geq 1 + ln (\Gamma + 1)$, substituindo $t$ por $ln(e {\cdot} (\Gamma + 1))$, temos que $\chi_{io}(\mathcal{H}) \in \mathcal{O}(ln(\Gamma))$. Se $t < 1 + ln (\Gamma + 1)$, então $\chi_{io}(\mathcal{H}) \leq (1 + ln (\Gamma + 1)) {\cdot} (e {\cdot} (\Gamma + 1))^{1/t}$, pelo Teorema $\ref{teo1}$, e o resultado segue. \newbegin
+
+\begin{cor}
+	\label{cor2}  
+	Seja $G$ um grafo com $\delta(G) \geq 2t$, para $t > 0$. Temos que $\chi_{io}(G) \leq t {\cdot} (e {\cdot} (\Delta^2 + 1))^{1/t}$.
+\end{cor}
+
+Seja $\mathcal{H} = (V(G), E)$ um hipergrafo tal que $E = \bigcup\limits_{v \in V(G)}N_G(v)$, \ie, $\mathcal{H}$ possui uma aresta $e_v$ para cada vértice $v \in V(G)$ e cada aresta $e_v \in E(\mathcal{H})$ contém os vértices adjacentes a $v$ em $G$. Note que uma $k$-coloração  ímpar $c$ para $\mathcal{H}$ também é uma $k$-coloração ímpar para $G$. Como cada aresta em $\mathcal{H}$ intersecta no máximo $\Delta^2$ outras arestas, pelo Teorema $\ref{teo1}$, temos o resultado desejado. \newbegin
+
+\begin{cor}
+	\label{cor3}  
+	$\chi_{io}(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t})$.
+\end{cor} 
+A demonstração é similar à demonstração do Corolário $\ref{cor1}$.
+\newbegin
+
+\begin{teo}
+	\label{teo2}  
+	Seja $G$ um grafo. Temos que $\chi_o(G) \leq \chi(G) {\cdot} \chi_{io}(G)$.
+\end{teo} \newbegin 
+
+\begin{cor}
+	Seja $G$ um grafo com $\delta(G) \geq 6$. Se $\chi(G) \in \mathcal{O}(1)$, então $\chi_o(G) \leq \Delta$, para $\Delta$ suficientemente grande.
+\end{cor}
+Pelo Teorema $\ref{teo2}$ e o Corolário $\ref{cor2}$, temos que $\chi_o(G) \leq \chi(G) {\cdot} 3 {\cdot} (\Delta^2 + 1))^{1/3}$. Para $\Delta$ suficientemente grande, temos que $3 {\cdot} \chi(G) {\cdot} (\Delta^2 + 1))^{1/3} \leq \Delta$, pois $3 {\cdot} \chi(G) $ é uma constante.\newbegin
+
+\begin{cor}
+	Seja $G$ um grafo com $\delta(G) \geq 2t$. Se $\chi(G) \in \mathcal{O}(1)$, então $\chi_o(G) \in \mathcal{O}(ln(\Delta) {\cdot} \Delta^{2/t}) $.
+\end{cor}
+Pelo Teorema $\ref{teo2}$ e o Corolário $\ref{cor3}$, temos o resultado desejado. \newbegin
+
+\begin{teo}
+	\label{teo3}   
+	Sejam $d$ e $k$ inteiros positivos, com $d$ par. Para qualquer $1 \leq t \leq \dfrac{d}{2}$, temos que: 
+	\begin{align}
+		\begin{split}
+			\sum\limits_{i = 0}^{ k }i^{d}   \leq k^{d-t} {\cdot} t^t  {\cdot} 2^{2k-t-1} 
+		\end{split} 
+	\end{align}
+	
+\end{teo} \newbegin
+
+\begin{cor}
+	Sejam $d$ e $k$ inteiros positivos, com $d \geq 3$ ímpar. Para qualquer $1 \leq t \leq \blfloor \dfrac{d}{2} \brfloor$, temos que: 
+	\begin{align}
+		\begin{split}
+			\sum\limits_{i = 0}^{ k }i^{d}   \leq k^{d-t} {\cdot} t^t  {\cdot} 2^{2k-t-1} 
+		\end{split} 
+	\end{align}
+\end{cor}
+
+Note que $\sum\limits_{i = 0}^{ k }i^{d} = \sum\limits_{i = 0}^{ k }i {\cdot} i^{d-1} \leq k {\cdot} \sum\limits_{i = 0}^{ k } i^{d-1}$. Pelo Teorema $\ref{teo3}$, temos que $k {\cdot} \sum\limits_{i = 0}^{ k }i^{d-1} \leq k {\cdot} k^{d-1-t} {\cdot} t^t  {\cdot} 2^{2k-t-1} = k^{d-t} {\cdot} t^t  {\cdot} 2^{2k-t-1} $, como desejado. 
